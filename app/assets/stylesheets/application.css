@@ -19,6 +19,15 @@
   font-family: helvetica, sans-serif;
 }
 
+a {
+  font-weight: bold;
+  color: black;
+}
+
+a:hover {
+  color: limegreen;
+}
+
 nav {
   width: 100%;
   background-color: lightgray;
@@ -30,7 +39,23 @@ nav img{
   margin: 10px 10px 0 10px;
 }
 
-nav form, nav a{
+nav #nav-right {
+  float: right;
+  margin-right: 10px;
+}
+
+nav form, nav a, nav div{
   display: inline-block;
   text-decoration: none;
+}
+
+#nav-right-dropdown {
+  display: none;
+  width: 100%;
+}
+
+#nav-right-dropdown a {
+  width: 100%;
+  background-color: white;
+  padding: 10px;
 }

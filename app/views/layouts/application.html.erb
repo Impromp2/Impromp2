@@ -18,13 +18,20 @@
     <img src="/imgs/search.svg">
     <input placeholder="Search"/>
   </form>
-  <a href="users/settings"><img src="/imgs/settings.svg">Settings</a>
-  <a href="users/logout"><img src="/imgs/logout.svg">Log Out</a>
+  <div id="nav-right">
+    <div id="drop-down">
+      <img src="/imgs/settings.svg"><%= current_user.email %></a>
+      <div id="nav-right-dropdown">
+        <a href="/users/edit">Settings</a>
+        <a href="/users/sign_out" class="navbar-link" rel="nofollow" data-method="delete">Log Out</a>
+      </div>
+    </div>
+  <div>
 </nav>
 
-  Logged in as <strong><%= current_user.email %></strong>.
+  <!--Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> -->
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
