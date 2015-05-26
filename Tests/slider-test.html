@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Slider - Range slider</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    i = 0
+    $("#add-new-time").on('click', function(){
+      var day = $('h1').text()
+      var template = $('#range-template').text().replace('replace', day);
+      $('#slider-area').append(template)
+
+      initiate()
+    });
+    $(".day-button").on('click', function(){
+      $(this).siblings().removeClass('day-selected')
+      $(this).addClass('day-selected')
+      var day = $(this).val()
+      $('h1').text(day)
+      $("#slider-area").children().each(function(){
+          if ($(this).hasClass(day)) {
+            $(this).show()
+        } else {
+          $(this).hide()
+        }
+      });
+    });
+    $("#slider-area").on('click','.delete input', function(){
+      $(this).parents('.slider-container').remove()
+    });
+    function initiate(){
+      $( ".slider-range").slider({
+        range: true,
+        min: 0,
+        max: 24,
+
+        // slide: function( event, ui ) {
+        //   var num1 = $( "#slider-range" ).slider( "values", 0 )
+        //   var num2 = $( "#slider-range" ).slider( "values", 1 )
+        //   console.log(num1, num2)
+        //   if(num1 > 12 ) {
+        //     $( "#amount" ).text(num1 - 12 + " pm");
+        //   } else if (num1 === 12){
+        //     $( "#amount" ).text(num1 - 12 + " pm");
+        //   } else if (num1 === 0) {
+        //     $( "#amount" ).text('12 am');
+        //   } else {
+        //     $( "#amount" ).text(num1 + " am");
+        //   }
+        //   if (num2 > 12 ){
+        //     $( "#amount2" ).text((num2 - 12) + " pm");
+        //   } else {
+        //     $( "#amount2" ).text(num2 + " am");
+        //   }
+        // },
+         change: function( event, ui ) {
+          console.log($( this ).slider( "instance" ).uuid);
+          var num1 = $( this ).slider( "values", 0 )
+          var num2 = $( this ).slider( "values", 1 )
+          if(num1 > 12 ) {
+            $( this ).find("#amount").text(num1 - 12 + " pm");
+          } else if (num1 === 12){
+            $( this ).find("#amount").text("12 pm");
+          } else if (num1 === 0) {
+            $( this ).find("#amount").text('12 am');
+          } else {
+            $( this ).find("#amount").text(num1 + " am");
+          }
+          if (num2 > 12 ){
+            $(this).find( "#amount2" ).text((num2 - 12) + " pm");
+          } else if (num2 === 12){
+            $( this ).find("#amount2").text("12 pm");
+          }else {
+            $(this).find( "#amount2" ).text(num2 + " am");
+          }
+        }
+      });
+    } 
+  });
+  </script>
+
+  <style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    margin-top: 100px;
+  }
+  span{
+    position: relative;
+  }
+  #amount, #amount2{
+    position: absolute;
+    margin-top: 40px;
+    font-size: 10px;
+    width: 40px;
+    text-align: center;
+    margin-left: -15px;
+  }
+  #main-content{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .slider-container{
+    position: relative;
+    margin-top: 40px;
+  }
+  .day-button{
+    padding: 10px;
+    border-radius: 3px;
+    border:none;
+  }
+  .day-selected{
+    background-color: #efefef;
+  }
+  .ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    margin-top: -6px;
+    width: .5em;
+    height: 2em;
+    cursor: default;
+    -ms-touch-action: none;
+    touch-action: none;
+  }
+  .hour-lines {
+    font-size: 8px;
+    z-index: -1;
+    position: absolute;
+    margin-top: -8px;
+    width: 100%;
+  }
+  .line-morning{
+    display: inline-block;
+    left: 0;
+    width: .5%;
+  }
+  .line-noon{
+    display: inline-block;
+    margin-left: 48.5%;
+    width: .5%;
+  }
+  .line-midnight{
+    display: inline-block;
+    float: right;
+    right: 0;
+    width: .5%;
+  }
+  .line {
+    height: 30px;
+    width: 100%;
+    background-color: lightgray;
+    margin: 0;
+    padding: 0;
+    border-radius: 3px;
+  }
+  .hour-lines p{
+    margin-left: -10px;
+
+  }
+  .p-lines{
+    position: absolute;
+    margin-top: -20px;
+    font-size: 10px;
+    width: 100%;
+  }
+  .p-morning {
+    width: 20%;
+    margin-right: 10%;
+    display: inline-block;
+  }
+  .p-noon{
+    width: 20%;
+    margin: 0 9%;
+    display: inline-block;
+    text-align: center;
+  }
+  .p-midnight{
+    display: inline-block;
+    width: 20%;
+    float: right; 
+    text-align: right;
+  }
+  button{
+    padding:10px;
+    border-radius: 3px;
+    border:none;
+  }
+  button:hover{
+    background-color: lightgray;
+  }
+  </style>
+</head>
+<body>
+<div id="main-content">
+  <div id="days">
+    <input type="submit" id="sunday" class="day-button day-selected" value="Sunday"/>
+    <input type="submit" id="monday" class="day-button" value="Monday"/>
+    <input type="submit" id="tuesday" class="day-button" value="Tuesday"/>
+    <input type="submit" id="wednesday" class="day-button" value="Wednesday"/>
+    <input type="submit" id="thursday" class="day-button" value="Thursday"/>
+    <input type="submit" id="friday" class="day-button" value="Friday"/>
+    <input type="submit" id="saturday" class="day-button" value="Saturday"/>
+  </div>
+
+  <input type="button" id="add-new-time" value="Add New"/>
+  <h1 id="day">Sunday</h1>
+  <div id="slider-area"></div>
+   
+  <script type="text/template" id="range-template">
+  <div class="slider-container replace">
+    <div class="slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+      <div class="hour-lines">
+        <div class="line-morning">
+          <div class="line">
+          </div>
+        </div>
+        <div class="line-noon">
+          <div class="line">
+          </div>
+        </div>
+        <div class="line-midnight">
+          <div class="line">
+          </div>
+        </div>
+      </div>
+      <div class="p-lines">
+          <div class="p-morning">12 AM</div>
+          <div class="p-noon">12 Noon</div>
+          <div class="p-midnight">11:59 PM</div>
+      </div>
+      <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 15%;">
+        <div>
+          <p type="text" id="amount" readonly="" style="border:0; color:#f6931f; font-weight:bold;"></p>
+        </div>
+      </span>
+      <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 60%;">
+        <div>
+          <p type="text" id="amount2" readonly="" style="border:0; color:#f6931f; font-weight:bold;"></p>
+        </div>
+      </span>
+    </div>
+    <div class="delete">
+      <input type="submit" value="x"/>
+    </div>
+  </div>
+  </script>
+</div>
+ 
+</body>
+</html>
