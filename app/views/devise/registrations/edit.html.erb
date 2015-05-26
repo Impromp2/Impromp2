@@ -1,8 +1,7 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <script type="text/template" id="edit-user-template">
-  <form>
-    <input type="hidden"
+  <form method="/users" action="POST">
     <img src='{{image_url}}'>
     <input name="first_name"/>
     <input name="last_name"/>
