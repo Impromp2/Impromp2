@@ -7,19 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav>
-  <a href="/"><img src="#" alt="logo"></a>
-  <a href="/events"><img src="/imgs/calendar.svg">Events</a>
-  <a href="/events/new"><img src="/imgs/add-event.svg">Create Event</a>
-  <form>
-    <img src="/imgs/search.svg">
-    <input placeholder="Search"/>
-  </form>
-  <a href="users/settings"><img src="/imgs/settings.svg">Settings</a>
-  <a href="users/logout"><img src="/imgs/logout.svg">Log Out</a>
-</nav>
 
 <% if user_signed_in? %>
+  <nav>
+    <a href="/"><img src="#" alt="logo"></a>
+    <a href="/events"><img src="/imgs/calendar.svg">Events</a>
+    <a href="/events/new"><img src="/imgs/add-event.svg">Create Event</a>
+    <form>
+      <img src="/imgs/search.svg">
+      <input placeholder="Search"/>
+    </form>
+    <a href="users/settings"><img src="/imgs/settings.svg">Settings</a>
+    <a href="users/logout"><img src="/imgs/logout.svg">Log Out</a>
+  </nav>
+
   Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
