@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :categories
+    resources :events
   end
 
   # Example of regular route:
