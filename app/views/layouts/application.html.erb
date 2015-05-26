@@ -2,6 +2,17 @@
 <html>
 <head>
   <title>Impromp2</title>
+  <!-- TEMPLATES -->
+  <script type="text/template" id="edit-user-template">
+    <form method="/users" action="POST">
+      <img src='{{image_url}}'>
+      <input name="first_name"/>
+      <input name="last_name"/>
+      <input name="zipcode"/>
+      <input name="email"/>
+      <button>Save</button>
+    </form>
+  </script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
