@@ -9,8 +9,9 @@ class UsersController < ApplicationController
 
 
   def update
-    current_user.email = params[:email]
-    current_user.save
+    update = JSON.parse(params["user "])
+    current_user.first_name = update['first_name']
+    current_user.save()
   end
 
 end
