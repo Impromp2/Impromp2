@@ -5,8 +5,6 @@ Impromp2App.Views.EventView = Backbone.View.extend({
     this.listenTo( this.model, "change", this.render )
     this.listenTo( this.model, "destroy", this.remove );
   },
-  
-  tagName: 'tr',
 
   template: $('#event-template').html(),
   
@@ -17,7 +15,9 @@ Impromp2App.Views.EventView = Backbone.View.extend({
   
   render: function(){
     this.$el.empty();
+    console.log(this.template)
     var renderedEvent = Mustache.render(this.template, this.model.attributes)
+    console.log(this.$el)
     this.$el.html(renderedEvent);
 
     return this
