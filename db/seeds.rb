@@ -24,7 +24,7 @@
 
 # Event.create({
 #   name: "Building iOS apps with React Native",
-#   time: Time.at(1432657800),
+#   time: Time.at(1433015938),
 #   attendee_limit: 50,
 #   location_name: "Metabahn",
 #   street: "6767 Old Madison Pike NW #450",
@@ -37,7 +37,7 @@
 
 # Event.create({
 #   name: "Volunteer and Run the Rugged Maniac for Free",
-#   time: Time.at(1432645200),
+#   time: Time.at(1433102338),
 #   attendee_limit: 25,
 #   location_name: "Aviator Sports and Event Center",
 #   street: "3159 Flatbush Avenue",
@@ -50,7 +50,7 @@
 
 # Event.create({
 #   name: "Quick 40 minute work out!",
-#   time: Time.at(1432650600),
+#   time: Time.at(1433112338),
 #   attendee_limit: 40,
 #   location_name: "Bryant Park",
 #   street: "100 42nd Street",
@@ -63,7 +63,7 @@
 
 # Event.create({
 #   name: "Virtual Meetup: JavaScript Object Oriented Programming",
-#   time: Time.at(1432659600),
+#   time: Time.at(1432929538),
 #   attendee_limit: 50,
 #   location_name: "New York Business and Tech Meetup",
 #   street: "239 Centre St",
@@ -74,23 +74,23 @@
 #   categories: "programming"
 # })
 
-Availability.create({
-  user_id: 1,
-  day_of_the_week: 'Monday',
-  start_time: 3,
-  end_time: 4
-})
+# Availability.create({
+#   user_id: 1,
+#   day_of_the_week: 'Monday',
+#   start_time: 3,
+#   end_time: 4
+# })
 
-Availability.create({
-  user_id: 1,
-  day_of_the_week: 'Wednesday',
-  start_time: 6,
-  end_time: 7
-})
+# Availability.create({
+#   user_id: 1,
+#   day_of_the_week: 'Wednesday',
+#   start_time: 6,
+#   end_time: 7
+# })
 
-Availability.create({
-  user_id: 1,
-  day_of_the_week: 'Friday',
-  start_time: 15,
-  end_time: 18
-})
+# Availability.create({
+#   user_id: 1,
+#   day_of_the_week: 'Friday',
+#   start_time: 15,
+#   end_time: 18
+# })

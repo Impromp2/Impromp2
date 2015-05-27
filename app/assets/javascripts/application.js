@@ -14,10 +14,11 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
-//= require mustache 
+//= require mustache
 
 //= require ./libraries/underscore
 //= require ./libraries/backbone
+//= require ./libraries/moment
 
 //= require ./backbone/app
 //= require ./backbone/models/Event

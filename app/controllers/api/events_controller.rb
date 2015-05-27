@@ -1,22 +1,27 @@
 module Api
   class EventsController < ApplicationController
     def index
-      events = Event.where(params[:start]) # need to put date range in here instead of all
+      start_time = Date.strptime(params[:start], '%Y%m%d') 
+      end_time = Date.strptime(params[:end], '%Y%m%d') 
+      events = Event.where(:time => start_time.beginning_of_day..end_time.end_of_day)
+      
       # selectedEvents = {monday: [], tuesday: [], wednesday: [], thursday: [], friday: [], saturday: [], sunday: []}
-      selectedEvents = events.map do |e|
-        if (e.time.monday? && (15 < e.time.hour.to_i && e.time.hour.to_i < 20))
-          # selectedEvents.push(e)
-          e
-        elsif (e.time.tuesday? && (15 < e.time.hour.to_i && e.time.hour.to_i < 20))
-          e
-        else
-          puts e
-        end
-      end
+
+      # selectedEvents = []
+
+      # session_user = User.find(current_user.id).to_json(:include => :availabilities)
+
+      # events.each do |e|
+      #   session_user.availabilites.each do |i|
+      #     if (i.day_of_the_week == e.time.day_of_the_week && (i.start_time < e.time.hour.to_i && e.time.hour.to_i < i.end_time))
+      #       selectedEvents.push(e)
+      #     end
+      #   end
+      # end
 
       # return selectedEvents
       # events = Event.bark
-      render json: selectedEvents
+      render json: events
     end
   end
 end
