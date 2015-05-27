@@ -18,6 +18,7 @@ Impromp2App.Views.EventListView = Backbone.View.extend({
       console.log(modelFromCollection);
       var newEventView = new Impromp2App.Views.EventView({model: modelFromCollection});
       newEventView.render();
-      this.$el.append(newEventView.$el)
+      console.log(newEventView.render());
+      this.$el.append(newEventView.$el);
   }
 })
