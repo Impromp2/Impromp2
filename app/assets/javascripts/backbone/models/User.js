@@ -12,9 +12,8 @@ Impromp2App.Models.User = Backbone.Model.extend({
         switch (method) {
           case "read":
             options.url = "/user";
-            console.log(options)
+            console.log(options);
             return Backbone.sync(method, model, options);
-          break;
         }
   }
 });
