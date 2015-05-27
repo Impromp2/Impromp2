@@ -2,7 +2,9 @@ class UsersController < ApplicationController
 
   # Used to create the backbone model for the logged in User
   def show
-    render json: current_user
+    # Assigns a user's availabilities to the current user object
+    session_user = User.find(current_user.id).to_json(:include => :availabilities)
+    render json: session_user
   end
 
 

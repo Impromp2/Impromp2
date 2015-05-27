@@ -4,5 +4,4 @@ class Event < ActiveRecord::Base
   # def bark
   #   puts "woof"
   # end
-
 end
