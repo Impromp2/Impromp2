@@ -10,3 +10,4 @@ Impromp2App.Views.EventListView = Backbone.View.extend({
      this.$el.append(newEventView.render().$el);
  }
 })
+
