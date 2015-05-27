@@ -9,16 +9,20 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
   editTemplate: $('#edit-user-template').text(),
 
   events: {
-    //placeholder for changing image modal
+    'submit #button': "update"
   },
 
   render: function(){
-    console.log(editTemplate);
     Impromp2App.currentUser = new Impromp2App.Models.User();
     Impromp2App.currentUser.fetch();
     console.log(Impromp2App.currentUser);
     // this.$el.empty();
     var html = Mustache.render(this.editTemplate, this.model.attributes);
     this.$el.html(html);
+  },
+
+  update: function(){
+    this.set('first_name', 'params[:first_name]')
   }
 });
+

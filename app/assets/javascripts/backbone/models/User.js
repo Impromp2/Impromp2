@@ -13,6 +13,11 @@ Impromp2App.Models.User = Backbone.Model.extend({
           case "read":
             options.url = "/user";
             return Backbone.sync(method, model, options);
+          break;
+          case "update":
+            options.url = "/user"
+            return Backbone.sync(method, model, options);
+          break;
         }
   }
 });
