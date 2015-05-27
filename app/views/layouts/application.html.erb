@@ -13,6 +13,11 @@
       <button>Save</button>
     </form>
   </script>
+
+  <script type="text/template" id="event-template">
+    <div>{{name}} | {{location_name}} | {{category}} | {{time}}</div>
+  </script>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
