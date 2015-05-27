@@ -15,7 +15,6 @@ Impromp2App.Views.EventView = Backbone.View.extend({
   
   render: function(){
     this.$el.empty();
-    console.log(this.template)
     var renderedEvent = Mustache.render(this.template, this.model.attributes)
     console.log(this.$el)
     this.$el.html(renderedEvent);
