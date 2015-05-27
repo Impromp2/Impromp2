@@ -2,7 +2,7 @@ var Impromp2App = Impromp2App || { Models: {}, Collections: {}, Views: {} };
 var eventCollection;
 
 Impromp2App.initialize = function(){
-  eventCollection = new Impromp2App.Collections.EventCollection();
+  var eventCollection = new Impromp2App.Collections.EventCollection();
 
   var listView = new Impromp2App.Views.EventListView({
     collection: eventCollection,

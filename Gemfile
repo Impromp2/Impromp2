@@ -30,6 +30,7 @@ gem 'devise'
 # gem 'unicorn'
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
+gem 'mustache-js-rails'
 gem 'simple_form'
 
 # Use Capistrano for deployment

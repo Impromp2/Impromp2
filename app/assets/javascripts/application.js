@@ -13,7 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-// require turbolinks
+//= require turbolinks
+//= require mustache 
+
 //= require ./libraries/underscore
 //= require ./libraries/backbone
+
+//= require ./backbone/app
+//= require ./backbone/models/Event
+//= require ./backbone/models/User
+//= require ./backbone/collections/EventCollection
+//= require ./backbone/views/events/EventView
+//= require ./backbone/views/events/EventListView
+//= require ./backbone/views/UserView
 //= require_tree .
