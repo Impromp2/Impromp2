@@ -73,3 +73,24 @@ Event.create({
   description: "Join NetCom Learning trainer, Meganadha Reddy, along with IT and business skills training leader NetCom Learning for a free interactive webinar on JavaScript Object Oriented Programming",
   categories: "programming"
 })
+
+Availability.create({
+  user_id: 1,
+  day_of_the_week: 'Monday',
+  start_time: 3,
+  end_time: 4
+})
+
+Availability.create({
+  user_id: 1,
+  day_of_the_week: 'Wednesday',
+  start_time: 6,
+  end_time: 7
+})
+
+Availability.create({
+  user_id: 1,
+  day_of_the_week: 'Friday',
+  start_time: 15,
+  end_time: 18
+})
