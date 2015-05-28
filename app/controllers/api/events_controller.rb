@@ -11,6 +11,7 @@ module Api
 
       events.each do |e|
         session_user["availabilities"].each do |i|
+
           if (i["day_of_the_week"] == e.time.strftime("%A") && (i["start_time"] < e.time.hour.to_i && e.time.hour.to_i < i["end_time"]))
             selectedEvents.push(e)
           end

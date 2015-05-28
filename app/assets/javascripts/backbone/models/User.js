@@ -8,25 +8,25 @@ Impromp2App.Models.User = Backbone.Model.extend({
   },
   urlRoot: "/user",
   toJSON: function() {
-    var string = JSON.stringify( _.clone( this.attributes ))
-    return "user =" + string
+    var string = JSON.stringify( _.clone( this.attributes ));
+    return "user =" + string;
   },
   sync: function(method, model, options) {
-        options || (options = {});
-        switch (method) {
-          case "read":
-            options.url = "/user";
-            return Backbone.sync(method, model, options);
-          break;
-          case "update":
-            options.data = this.toJSON();
-            options.dataType = "json",
-            console.log(options.data)
-            options.method = "PUT"
-            options.url = "/user"
-            return Backbone.sync(method, model, options);
-          break;
-        }
+    options || (options = {});
+    switch (method) {
+      case "read":
+        options.url = "/user";
+        return Backbone.sync(method, model, options);
+      break;
+      case "update":
+        options.data = this.toJSON();
+        options.dataType = "json",
+        console.log(options.data);
+        options.method = "PUT";
+        options.url = "/user";
+        return Backbone.sync(method, model, options);
+      break;
+    }
   }
 });
 
