@@ -103,8 +103,8 @@
 </div>
   </form>
 
-  <h1>Available Times</h1>
-  <div id="days">
+  <h1 class="text-center lead">Available Times</h1>
+  <div id="days" class="text-center">
     <input type="submit" id="sunday" class="day-button day-selected btn btn-default" value="Sunday"/>
     <input type="submit" id="monday" class="day-button btn btn-primary" value="Monday"/>
     <input type="submit" id="tuesday" class="day-button btn btn-success" value="Tuesday"/>
@@ -113,12 +113,16 @@
     <input type="submit" id="friday" class="day-button btn btn-danger" value="Friday"/>
     <input type="submit" id="saturday" class="day-button btn btn-custom" value="Saturday"/>
   </div>
-
-  <h1 id="day">Sunday</h1>
-  <div id="slider-area"></div>
+  
+  <div id="textbox">
+  <h6 class="alignleft"> current availability for: </h6>
+  <h3 id="day" class="text-center lead">Sunday</h3>
+  </div>
+  <div id="slider-area" class="text-center"></div>
+  <br>
   <input type="button" id="add-new-time" value="Add New"/>
   
-  <h1>Categories</h1>
+  <h1 class="text-center lead">Categories</h1>
   <div class="row">
   <div class="col-xs-6 col-sm-3 btn btn-category">Big Data</div>
   <div class="col-xs-6 col-sm-3 btn btn-default">Fitness</div>
@@ -136,7 +140,7 @@
   <div class="col-xs-6 col-sm-3 btn btn-default">Ruby</div>
   <div class="col-xs-6 col-sm-3 btn btn-default">Programming</div>
   <div class="col-xs-6 col-sm-3 btn btn-default">Javascript</div>
-</div>
+</div> <br> <br>
 </script>
 
 
@@ -146,9 +150,31 @@
 
                                <!-- TEMPLATE FOR EVENTS PAGE -->
 
- <script type="text/template" id="event-template">
-   <div>{{name}} | {{location_name}} | {{category}} | {{time}}</div>
- </script>
+<script type="text/template" id="event-template">
+      <div class="post-container">
+          <div class="post-thumb">
+              <h2>{{day}}</h2>
+              <h4>{{daydesc}}</h4>
+          </div>
+          <div class="post-content">
+              <div class="allRows">
+                  {{#events}}
+                  <div class="row">
+                      <div class="col-xs-6 col-sm-2">{{time}}</div>
+                      <div class="col-xs-6 col-sm-4">
+                          <p class="data"> {{name}} {{description}}</p>
+                      </div>
+                      <div class="col-xs-6 col-sm-3">
+                          <p>{{categories}}</p>
+                      </div>
+                      <div class="col-xs-6 col-sm-3">{{attendee_limit}}</div>
+                  </div>
+                  {{/events}}
+              </div>
+          </div>
+             <br><br><hr />
+      </div>
+  </script>
 
  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
