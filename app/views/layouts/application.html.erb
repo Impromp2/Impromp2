@@ -41,55 +41,96 @@
       </div>
     </div>
   </script>
-  <script type="text/template" id="edit-user-template">
-    <form method="/users" action="POST">
-      <br>
-      <br>
-      <img src='{{image_url}}' width="250px" height="250px">
-      <br><br>
-      <label>Change Picture
-      </label>
-      <input data-input="image_url" value="{{image_url}}"/>
-      <br>
-      <label>First NAME
-      </label>
-      <input data-input="first_name" value="{{first_name}}" class="form-control" id="user_last_name"/>
-      <br>
-      <label>Last Name
-      </label>
-      <input data-input="last_name" value="{{last_name}}" />
-      <br>
-      <label>Zip Code
-      </label>
-      <input data-input="zipcode" value="{{zipcode}}" />
-      <br>
-      <label>Email
-      </label>
-      <input data-input="email" value="{{email}}" />
-      <br><br>
-      <button id="savebutton">Save</button>
-      <br>
-      <br>
-    </form>
 
-    <h1>Available Times</h1>
-    <div id="days">
-      <input type="submit" id="sunday" class="day-button day-selected" value="Sunday"/>
-      <input type="submit" id="monday" class="day-button" value="Monday"/>
-      <input type="submit" id="tuesday" class="day-button" value="Tuesday"/>
-      <input type="submit" id="wednesday" class="day-button" value="Wednesday"/>
-      <input type="submit" id="thursday" class="day-button" value="Thursday"/>
-      <input type="submit" id="friday" class="day-button" value="Friday"/>
-      <input type="submit" id="saturday" class="day-button" value="Saturday"/>
-    </div>
 
-    <h1 id="day">Sunday</h1>
-    <div id="slider-area"></div>
-    <input type="button" id="add-new-time" value="Add New"/>
-    
-    <h1>Categories</h1>
-  </script>
+  <!-- TEMPLATE FOR PROFILE SETTINGS PAGE -->
 
+ <script type="text/template" id="edit-user-template">
+   <form method="/users" action="POST">
+
+ <div class="container">
+   <div class="row">
+     <div class="col-md-9">
+       <div class="panel panel-default">
+         <div class="panel-body">
+           <div class="row">
+             <div class="col-md-12 lead">
+               Edit user profile
+               <hr>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-md-4 text-center">
+               <div id="img-preview-block" class="center-block">
+<img src='{{image_url}}' width="250px" height="250px">
+     <br><br>
+     <label>Change Picture
+     </label>
+     <input data-input="image_url" value="{{image_url}}"/>
+     <br>
+               </div>
+               <br> 
+             </div>
+             <div class="col-md-8">
+               <div class="form-group">
+               <label>First name</label>
+ <input data-input="first_name" value="{{first_name}}" class="form-control"/>
+ <br> </div>
+              <div class="form-group">
+              <label>Last name</label>
+ <input data-input="last_name" value="{{last_name}}" type="text" class="form-control"/>
+ <br></div>
+             <div class="form-group">
+             <label>Email Address</label>
+           <input data-input="email" value="{{email}}" type="text" class="form-control"/>
+               </div>
+                 <div class="form-group">
+                 <label>Zip Code</label>
+                 <input data-input="zipcode" value="{{zipcode}}" type="text" class="form-control"/>
+               </div>
+   <button class="btn btn-primary">Save</button>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-md-12">
+               <hr>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+   </form>
+
+   <h1>Available Times</h1>
+   <div id="days">
+     <input type="submit" id="sunday" class="day-button day-selected btn btn-default" value="Sunday"/>
+     <input type="submit" id="monday" class="day-button btn btn-primary" value="Monday"/>
+     <input type="submit" id="tuesday" class="day-button btn btn-success" value="Tuesday"/>
+     <input type="submit" id="wednesday" class="day-button btn btn-info" value="Wednesday"/>
+     <input type="submit" id="thursday" class="day-button btn btn-warning" value="Thursday"/>
+     <input type="submit" id="friday" class="day-button btn btn-danger" value="Friday"/>
+     <input type="submit" id="saturday" class="day-button btn btn-default" value="Saturday"/>
+   </div>
+
+   <h1 id="day">Sunday</h1>
+   <div id="slider-area"></div>
+   <input type="button" id="add-new-time" value="Add New"/>
+   
+   <h1>Categories</h1>
+ </script>
+
+
+
+
+
+
+
+
+
+
+                                <!-- TEMPLATE FOR EVENTS PAGE -->
 
   <script type="text/template" id="event-template">
     <div>{{name}} | {{location_name}} | {{category}} | {{time}}</div>
