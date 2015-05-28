@@ -2,7 +2,7 @@ var Impromp2App = Impromp2App || { Models: {}, Collection: {}, Views: {} };
 
 Impromp2App.Views.UserEditView = Backbone.View.extend({
   initialize: function(){
-    this.listenTo( this.model, "change", this.render);
+    // this.listenTo( this.model, "change", this.render);
     // this.listenTo( this.model, "destroy", this.render);
   },
 
@@ -33,13 +33,12 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
 
     this.model.save()
 
-
   }
 });
 
 Impromp2App.Views.UserAvailabilitiesView = Backbone.View.extend({
   initialize: function(){
-    this.listenTo( this.model, "change", this.render)
+    // this.listenTo( this.model, "change", this.render)
   },
   availabilitiesTemplate: $("#edit-availabilities-template").text(),
   render: function(){
@@ -50,11 +49,11 @@ Impromp2App.Views.UserAvailabilitiesView = Backbone.View.extend({
 
 Impromp2App.Views.UserCategoriesView = Backbone.View.extend({
   initialize: function(){
-    this.listenTo( this.model, "change", this.render)
+    // this.listenTo( this.model, "change", this.render)
   },
-  availabilitiesTemplate: $("#edit-categories-template").text(),
+  categoriesTemplate: $("#edit-categories-template").text(),
   render: function(){
-    var html = Mustache.render(this.availabilitiesTemplate, this.model.attributes);
+    var html = Mustache.render(this.categoriesTemplate, this.model.attributes);
     this.$el.append(html);
   }
 });
