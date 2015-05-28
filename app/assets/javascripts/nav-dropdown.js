@@ -5,4 +5,5 @@ $(function(){
   $('#drop-down').on('mouseleave', function(){
     $('#nav-right-dropdown').hide()
   });
+  
 });
