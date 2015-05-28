@@ -11,7 +11,10 @@ Impromp2App.initialize = function(){
 
   Impromp2App.currentUser = new Impromp2App.Models.User();
   Impromp2App.currentUser.fetch();
+
   eventCollection.fetch();
+  console.log(Impromp2App.currentUser);
+  // Impromp2App.availabilities = Impromp2App.currentUser.attributes.availabilities;
 };
 
 
