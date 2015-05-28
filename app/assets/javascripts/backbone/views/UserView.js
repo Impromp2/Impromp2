@@ -9,13 +9,12 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
   editTemplate: $('#edit-user-template').text(),
 
   events: {
-    'submit': "update",
-    'click #add-new-time': 'renderSliders'
+    'submit': 'update',
+    'click #save-availabilities': 'saveAvailabilities'
   },
 
   render: function(){
     var html = Mustache.render(this.editTemplate, this.model.attributes);
-    console.log(this.model.attributes);
     this.$el.append(html);
     var avails = Impromp2App.currentUser.attributes.availabilities;
 
@@ -73,7 +72,7 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
          $( this ).slider( "values", [val3 || 0, val4 || 0] );
        },
         change: function( event, ui ) {
-         console.log($( this ).slider( "instance" ).uuid);
+         // console.log($( this ).slider( "instance" ).uuid);
          var num1 = $( this ).slider( "values", 0 );
          var num2 = $( this ).slider( "values", 1 );
          if(num1 > 12 ) {
@@ -92,7 +91,6 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
          }else {
            $(this).find( "#amount2" ).text(num2 + " am");
          }
-         console.log($( this ).slider( "values" ));
        }
      });
    }
@@ -119,33 +117,29 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
     this.model.save();
   },
 
-  renderSliders: function(){
-    
+  saveAvailabilities: function(){
+    var sliderTimesJSON = [];
+    var sliderArray = $(".slider-range").toArray();
+    _.each(sliderArray, function(e){
+      var sliderTimes = $(e).slider('values');
+      var sliderDay = $(e).parent().attr('class').replace('slider-container ', '');
+      sliderTimes.push(sliderDay);
+      sliderTimesJSON.push(sliderTimes);
+    });
+    $.ajax({
+      url: '/api/availabilities',
+      type: 'DELETE'
+    }).done(function(data){
+      console.log("deleted availabilities");
+      $.ajax({
+        url: '/api/availabilities',
+        type: 'POST',
+        dataType: 'json',
+        data: sliderTimesJSON
+      }).done(function(data){
+        console.log('saved availabilities');
+      });
+    });
   }
+
 });
-
-// Impromp2App.Views.UserAvailabilitiesView = Backbone.View.extend({
-//   initialize: function(){
-//     // this.listenTo( this.model, "change", this.render)
-//     this.listenTo( this.model, "change", this.render);
-
-//   },
-//   availabilitiesTemplate: $("#edit-availabilities-template"),
-//   render: function(){
-//     // var html = Mustache.render(this.availabilitiesTemplate, this.model.attributes);
-//     this.$el.append(this.availabilitiesTemplate);
-//   }
-// });
-
-// Impromp2App.Views.UserCategoriesView = Backbone.View.extend({
-//   initialize: function(){
-//     // this.listenTo( this.model, "change", this.render)
-//     this.listenTo( this.model, "change", this.render);
-//   },
-//   categoriesTemplate: $("#edit-categories-template").text(),
-//   render: function(){
-//     var html = Mustache.render(this.categoriesTemplate, this.model.attributes);
-//     this.$el.append(html);
-//   }
-// });
-
