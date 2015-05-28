@@ -113,4 +113,197 @@ background-size: cover;
 .form-signin input {
   margin-bottom: 10px;
 }
+
+  span{
+    position: relative;
+  }
+  #amount, #amount2{
+    position: absolute;
+    margin-top: 40px;
+    font-size: 10px;
+    width: 40px;
+    text-align: center;
+    margin-left: -15px;
+  }
+  #main-content{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .slider-container{
+    position: relative;
+    margin-top: 40px;
+  }
+  .day-button{
+    padding: 10px;
+    border-radius: 3px;
+    border:none;
+  }
+  .day-selected{
+    background-color: #efefef;
+  }
+  .ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    margin-top: -6px;
+    width: .5em;
+    height: 2em;
+    cursor: default;
+    -ms-touch-action: none;
+    touch-action: none;
+  }
+  .hour-lines {
+    font-size: 8px;
+    z-index: -1;
+    position: absolute;
+    margin-top: -8px;
+    width: 100%;
+  }
+  .line-morning{
+    display: inline-block;
+    left: 0;
+    width: .5%;
+  }
+  .line-noon{
+    display: inline-block;
+    margin-left: 48.5%;
+    width: .5%;
+  }
+  .line-midnight{
+    display: inline-block;
+    float: right;
+    right: 0;
+    width: .5%;
+  }
+  .line {
+    height: 30px;
+    width: 100%;
+    background-color: lightgray;
+    margin: 0;
+    padding: 0;
+    border-radius: 3px;
+  }
+  .hour-lines p{
+    margin-left: -10px;
+
+  }
+  .p-lines{
+    position: absolute;
+    margin-top: -20px;
+    font-size: 10px;
+    width: 100%;
+  }
+  .p-morning {
+    width: 20%;
+    margin-right: 10%;
+    display: inline-block;
+  }
+  .p-noon{
+    width: 20%;
+    margin: 0 9%;
+    display: inline-block;
+    text-align: center;
+  }
+  .p-midnight{
+    display: inline-block;
+    width: 20%;
+    float: right; 
+    text-align: right;
+  }
+  button{
+    padding:10px;
+    border-radius: 3px;
+    border:none;
+  }
+  button:hover{
+    background-color: lightgray;
+  }
  
+
+ img.avatar,
+div.avatar {
+  border: 1px solid #eee;
+  width: 122px;
+  height: 122px;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+body {
+    background: #fff;
+}
+
+.data {
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.data:hover{
+    overflow: visible; 
+    white-space: normal; 
+    width: auto;
+    position: absolute;
+    background-color:#FFF;
+}
+.data:hover+div {
+    margin-top:20px;
+}
+
+.fill {
+    background: #fff; 
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.post-container { 
+    overflow: auto
+}
+.container {
+      margin: 20px; 
+}
+.post-thumb {
+    float: left;
+/*    border: 5px solid grey;*/
+
+}
+
+.post-content {
+    margin-left: 210px
+}
+.post-title {
+    font-weight: bold;
+    font-size: 200%
+}
+.alignleft {
+  float: left;
+}
+.alignright {
+  float: right;
+}
+.footer {
+  background: black;
+  color: white;
+  height: 50px;
+}
+.footer a {
+  color: white;
+}
