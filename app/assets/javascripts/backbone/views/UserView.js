@@ -20,7 +20,8 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
     var avails = Impromp2App.currentUser.attributes.availabilities;
 
     $("#add-new-time").on('click', function(){
-     var day = $('h1').text();
+     var day = $('#day').text();
+     console.log(day);
      var template = $('#range-template').text().replace('replace', day);
      $('#slider-area').append(template);
 
@@ -31,7 +32,7 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
      $(this).siblings().removeClass('day-selected');
      $(this).addClass('day-selected');
      var day = $(this).val();
-     $('h1').text(day);
+     $('#day').text(day);
      $("#slider-area").children().each(function(){
          if ($(this).hasClass(day)) {
            $(this).show();
@@ -45,10 +46,21 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
      $(this).parents('.slider-container').remove();
    });
 
-   function sliderRender(val1, val2){
-     var template = $('#range-template').text().replace('replace', day);
-     $('#slider-area').append(template);
-     initiate(val1, val2);
+   function sliderRender(val1, val2, day){
+    var template = $('#range-template').text().replace('replace', day);
+    $('#slider-area').append(template);
+    initiate(val1, val2);
+    sliderHider();
+   }
+
+   function sliderHider(){
+    $("#slider-area").children().each(function(){
+        if ($(this).hasClass('Sunday')) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+     });
    }
 
    function initiate(val3, val4){
@@ -58,7 +70,7 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
        min: 0,
        max: 24,
        create: function(){
-         $( this ).slider( "values", [val3, val4] );
+         $( this ).slider( "values", [val3 || 0, val4 || 0] );
        },
         change: function( event, ui ) {
          console.log($( this ).slider( "instance" ).uuid);
@@ -85,7 +97,7 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
      });
    }
    _.each(avails, function(e){
-      sliderRender(e.start_time, e.end_time);
+      sliderRender(e.start_time, e.end_time, e.day_of_the_week);
     });
 
   },
