@@ -1,9 +1,11 @@
 var Impromp2App = Impromp2App || { Models: {}, Collection: {}, Views: {} };
 
 Impromp2App.Views.EventView = Backbone.View.extend({
-  initialize: function(){
+  initialize: function(options){
     this.listenTo( this.model, "change", this.render )
     this.listenTo( this.model, "destroy", this.remove );
+    this.day = options.day;
+    this.events = options.events;
   },
 
   template: $('#event-template').html(),
@@ -14,12 +16,22 @@ Impromp2App.Views.EventView = Backbone.View.extend({
   },
   
   render: function(){
-    this.$el.empty();
-    var renderedEvent = Mustache.render(this.template, this.model.attributes)
-    console.log(this.$el)
+    // this.$el.empty();
+
+    var day = moment(this.day).format('dddd');
+    var daydesc = moment(this.day).format('MMM Do YYYY');
+    var events = this.events;
+    // this.model.attributes
+    var eventObjects = events.map(function(event){
+      return event.attributes;
+    })
+    console.log(eventObjects)
+
+    var renderedEvent = Mustache.render(this.template, {day: day, daydesc: daydesc, events: eventObjects});
+    // debugger
     this.$el.html(renderedEvent);
 
-    return this
+    return this;
   },
   
   destroyEvent: function(e){
