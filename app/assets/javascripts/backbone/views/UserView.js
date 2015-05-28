@@ -31,6 +31,8 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
     this.model.set('image_url', image_url);
     this.model.set('zipcode', zipcode);
     this.model.set('email', email);
+
+    this.model.save();
   }
 });
 
