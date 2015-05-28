@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ./libraries/jquery-ui.min.js
 //= require twitter/bootstrap
 //= require turbolinks
 //= require mustache
