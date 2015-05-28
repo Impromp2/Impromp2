@@ -17,25 +17,26 @@
 
         <div class="post-container">
             <div class="post-thumb">
-                <h2>{{dow?}}</h2>
-                <h4> {{date?}} </h4>
+                <h2>{{day}}</h2>
+                <h4></h4>
             </div>
             <div class="post-content">
                 <div class="allRows">
                     <div class="row">
-                        <div class="col-xs-6 col-sm-2">{{event.time}}</div>
+                        <div class="col-xs-6 col-sm-2">{{time}}</div>
                         <div class="col-xs-6 col-sm-4">
-                            <p class="data"> {{Virtual Meetup: JavaScript Object Oriented Programming}} {{Recent innovations in storage, like SanDisk's new InfiniFlash offering, are driving higher storage densities and lower prices. Flash-optimized-NoSQL has the scalability to handle InfinFlash's 512G of Flash, and a two node HA DB cluster capable of over 1M TPS could fit in only 5u.}}</p>
+                            <p class="data"> {{name}} {{description}}</p>
                         </div>
                         <div class="col-xs-6 col-sm-3">
-                            <p>{{event.categories rfhtgdh}}</p>
+                            <p>{{categories}}</p>
                         </div>
-                        <div class="col-xs-6 col-sm-3">{{attendee_limit}}: </div>
+                        <div class="col-xs-6 col-sm-3">{{attendee_limit}}</div>
                     </div>
                 </div>
             </div>
                <br><br><hr />
         </div>
+
 
     </div>
                    <div class ="text-center footer">
@@ -45,3 +46,8 @@
                    </div>
     
 </body>
+
+
+  <script type="text/template" id="event-template">
+    <div>{{name}} | {{location_name}} | {{category}} | {{time}}</div>
+  </script>

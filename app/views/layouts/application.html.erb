@@ -3,6 +3,8 @@
 <head>
   <title>Impromp2</title>
   <!-- TEMPLATES -->
+
+  <!-- RANGE TEMPLATE -->
   <script type="text/template" id="range-template">
     <div class="slider-container replace">
       <div class="slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
@@ -42,10 +44,7 @@
     </div>
   </script>
 
-
-
-
-                       <!-- TEMPLATE FOR PROFILE SETTINGS PAGE -->
+  <!-- TEMPLATE FOR PROFILE SETTINGS PAGE -->
 
   <script type="text/template" id="edit-user-template">
     <form method="/users" action="POST">
@@ -121,24 +120,56 @@
     <input type="button" id="add-new-time" value="Add New"/>
     
     <h1>Categories</h1>
+   <div class="row">
+   <div class="col-xs-6 col-sm-3 btn btn-category">Big Data</div>
+   <div class="col-xs-6 col-sm-3 btn btn-default">Fitness</div>
+   <div class="col-xs-6 col-sm-3 btn btn-default">User Experience</div>
+   <div class="col-xs-6 col-sm-3 btn btn-default">Startups</div>
+  </div>
+   <div class="row">
+   <div class="col-xs-6 col-sm-3 btn btn-default">Animals</div>
+   <div class="col-xs-6 col-sm-3 btn btn-default">Artificial Intelligence</div>
+   <div class="col-xs-6 col-sm-3 btn btn-default">Innovation</div>
+   <div class="col-xs-6 col-sm-3 btn btn-default">Photography</div>
+  </div>
+   <div class="row">
+   <div class="col-xs-6 col-sm-3 btn btn-default">Food</div>
+   <div class="col-xs-6 col-sm-3 btn btn-default">Ruby</div>
+   <div class="col-xs-6 col-sm-3 btn btn-default">Programming</div>
+   <div class="col-xs-6 col-sm-3 btn btn-default">Javascript</div>
+  </div>
   </script>
 
 
-
-
-
-
-
-
-
-
-
-                                <!-- TEMPLATE FOR EVENTS PAGE -->
-
+  <!-- TEMPLATE FOR EVENTS PAGE -->
   <script type="text/template" id="event-template">
-    <div>{{name}} | {{location_name}} | {{category}} | {{time}}</div>
+      <div class="post-container">
+          <div class="post-thumb">
+              <h2>{{day}}</h2>
+              <h4>{{daydesc}}</h4>
+          </div>
+          <div class="post-content">
+              <div class="allRows">
+                  {{#events}}
+                  <div class="row">
+                      <div class="col-xs-6 col-sm-2">{{time}}</div>
+                      <div class="col-xs-6 col-sm-4">
+                          <p class="data"> {{name}} {{description}}</p>
+                      </div>
+                      <div class="col-xs-6 col-sm-3">
+                          <p>{{categories}}</p>
+                      </div>
+                      <div class="col-xs-6 col-sm-3">{{attendee_limit}}</div>
+                  </div>
+                  {{/events}}
+              </div>
+          </div>
+             <br><br><hr />
+      </div>
   </script>
 
+
+  <!-- SKELETON -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
