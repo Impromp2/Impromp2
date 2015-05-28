@@ -5,17 +5,7 @@ var eventCollection;
 
 Impromp2App.initialize = function(){
 
-  console.log('app initialized');
-  var eventCollection = new Impromp2App.Collections.EventCollection();
-  var listView = new Impromp2App.Views.EventListView({
-    collection: eventCollection,
-    el: $('#main-content')
-  });
-
-  var promise = eventCollection.fetch();
-  promise.done(function(){
-    console.log('events fetched');
-  });
+  
 };
 
 
@@ -35,6 +25,17 @@ $(function(){
 
     index: function(){
       $("#main-content").empty();
+      console.log('app initialized');
+      var eventCollection = new Impromp2App.Collections.EventCollection();
+      var listView = new Impromp2App.Views.EventListView({
+        collection: eventCollection,
+        el: $('#main-content')
+      });
+
+      var promise = eventCollection.fetch();
+      promise.done(function(){
+        console.log('events fetched');
+      });
     },
 
     // new: function(){
