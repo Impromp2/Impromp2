@@ -13,10 +13,7 @@ Impromp2App.initialize = function(){
     el: $('#main-content')
   });
 
-  var promise = eventCollection.fetch();
-  promise.done(function(){
-    console.log('events fetched')
-  })
+
   // availabilityCollection.fetch();
 
   // console.log(availabilityCollection);
@@ -43,7 +40,7 @@ $(function(){
 
     index: function(){
             $("#main-content").empty();
-
+            
       //checks if the page has been loaded. If not, runs the initialize function. (This prevents the eventListView from rendering twice)
   
     },
