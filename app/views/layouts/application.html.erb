@@ -1,148 +1,156 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Impromp2</title>
-  <!-- TEMPLATES -->
+ <title>Impromp2</title>
+ <!-- TEMPLATES -->
+ <script type="text/template" id="range-template">
+   <div class="slider-container replace">
+     <div class="slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+       <div class="hour-lines">
+         <div class="line-morning">
+           <div class="line">
+           </div>
+         </div>
+         <div class="line-noon">
+           <div class="line">
+           </div>
+         </div>
+         <div class="line-midnight">
+           <div class="line">
+           </div>
+         </div>
+       </div>
+       <div class="p-lines">
+           <div class="p-morning">12 AM</div>
+           <div class="p-noon">12 Noon</div>
+           <div class="p-midnight">11:59 PM</div>
+       </div>
+       <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 15%;">
+         <div>
+           <p type="text" id="amount" readonly="" style="border:0; color:#f6931f ; font-weight:bold;"></p>
+         </div>
+       </span>
+       <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 60%;">
+         <div>
+           <p type="text" id="amount2" readonly="" style="border:0; color:#f6931f ; font-weight:bold;"></p>
+         </div>
+       </span>
+     </div>
+     <div class="delete">
+       <input type="submit" value="x"/>
+     </div>
+   </div>
+ </script>
 
-  <!-- RANGE TEMPLATE -->
-  <script type="text/template" id="range-template">
-    <div class="slider-container replace">
-      <div class="slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-        <div class="hour-lines">
-          <div class="line-morning">
-            <div class="line">
+
+ <!-- TEMPLATE FOR PROFILE SETTINGS PAGE -->
+
+<script type="text/template" id="edit-user-template">
+  <form method="/users" action="POST">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12 lead">
+              Edit user profile
+              <hr>
             </div>
           </div>
-          <div class="line-noon">
-            <div class="line">
-            </div>
-          </div>
-          <div class="line-midnight">
-            <div class="line">
-            </div>
-          </div>
-        </div>
-        <div class="p-lines">
-            <div class="p-morning">12 AM</div>
-            <div class="p-noon">12 Noon</div>
-            <div class="p-midnight">11:59 PM</div>
-        </div>
-        <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 15%;">
-          <div>
-            <p type="text" id="amount" readonly="" style="border:0; color:#f6931f; font-weight:bold;"></p>
-          </div>
-        </span>
-        <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 60%;">
-          <div>
-            <p type="text" id="amount2" readonly="" style="border:0; color:#f6931f; font-weight:bold;"></p>
-          </div>
-        </span>
-      </div>
-      <div class="delete">
-        <input type="submit" value="x"/>
-      </div>
-    </div>
-  </script>
-
-  <!-- TEMPLATE FOR PROFILE SETTINGS PAGE -->
-
-  <script type="text/template" id="edit-user-template">
-    <form method="/users" action="POST">
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-12 lead">
-                Edit user profile
-                <hr>
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <div id="img-preview-block" class="center-block">
+<img src='{{image_url}}' width="250px" height="250px">
+    <br><br>
+    <label>Change Picture
+    </label>
+    <input data-input="image_url" value="{{image_url}}"/>
+    <br>
               </div>
+              <br> 
             </div>
-            <div class="row">
-              <div class="col-md-4 text-center">
-                <div id="img-preview-block" class="center-block">
- <img src='{{image_url}}' width="250px" height="250px">
-      <br><br>
-      <label>Change Picture
-      </label>
-      <input data-input="image_url" value="{{image_url}}"/>
-      <br>
-                </div>
-                <br> 
-              </div>
-              <div class="col-md-8">
-                <div class="form-group">
-                <label>First name</label>
-  <input data-input="first_name" value="{{first_name}}" class="form-control"/>
-  <br> </div>
-               <div class="form-group">
-               <label>Last name</label>
-  <input data-input="last_name" value="{{last_name}}" type="text" class="form-control"/>
-  <br></div>
+            <div class="col-md-8">
               <div class="form-group">
-              <label>Email Address</label>
-            <input data-input="email" value="{{email}}" type="text" class="form-control"/>
-                </div>
-                  <div class="form-group">
-                  <label>Zip Code</label>
-                  <input data-input="zipcode" value="{{zipcode}}" type="text" class="form-control"/>
-                </div>
-    <button>Save</button>
+              <label>First name</label>
+<input data-input="first_name" value="{{first_name}}" class="form-control"/>
+<br> </div>
+             <div class="form-group">
+             <label>Last name</label>
+<input data-input="last_name" value="{{last_name}}" type="text" class="form-control"/>
+<br></div>
+            <div class="form-group">
+            <label>Email Address</label>
+          <input data-input="email" value="{{email}}" type="text" class="form-control"/>
               </div>
+                <div class="form-group">
+                <label>Zip Code</label>
+                <input data-input="zipcode" value="{{zipcode}}" type="text" class="form-control"/>
+              </div>
+  <button class="btn btn-primary">Save</button>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <hr>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <hr>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-    </form>
+</div>
+  </form>
 
-    <h1>Available Times</h1>
-    <div id="days">
-      <input type="submit" id="sunday" class="day-button day-selected" value="Sunday"/>
-      <input type="submit" id="monday" class="day-button" value="Monday"/>
-      <input type="submit" id="tuesday" class="day-button" value="Tuesday"/>
-      <input type="submit" id="wednesday" class="day-button" value="Wednesday"/>
-      <input type="submit" id="thursday" class="day-button" value="Thursday"/>
-      <input type="submit" id="friday" class="day-button" value="Friday"/>
-      <input type="submit" id="saturday" class="day-button" value="Saturday"/>
-    </div>
-
-    <h1 id="day">Sunday</h1>
-    <div id="slider-area"></div>
-    <input type="button" id="add-new-time" value="Add New"/>
-    
-    <h1>Categories</h1>
-   <div class="row">
-   <div class="col-xs-6 col-sm-3 btn btn-category">Big Data</div>
-   <div class="col-xs-6 col-sm-3 btn btn-default">Fitness</div>
-   <div class="col-xs-6 col-sm-3 btn btn-default">User Experience</div>
-   <div class="col-xs-6 col-sm-3 btn btn-default">Startups</div>
+  <h1 class="text-center lead">Available Times</h1>
+  <div id="days" class="text-center">
+    <input type="submit" id="sunday" class="day-button day-selected btn btn-default" value="Sunday"/>
+    <input type="submit" id="monday" class="day-button btn btn-primary" value="Monday"/>
+    <input type="submit" id="tuesday" class="day-button btn btn-success" value="Tuesday"/>
+    <input type="submit" id="wednesday" class="day-button btn btn-info" value="Wednesday"/>
+    <input type="submit" id="thursday" class="day-button btn btn-warning" value="Thursday"/>
+    <input type="submit" id="friday" class="day-button btn btn-danger" value="Friday"/>
+    <input type="submit" id="saturday" class="day-button btn btn-custom" value="Saturday"/>
   </div>
-   <div class="row">
-   <div class="col-xs-6 col-sm-3 btn btn-default">Animals</div>
-   <div class="col-xs-6 col-sm-3 btn btn-default">Artificial Intelligence</div>
-   <div class="col-xs-6 col-sm-3 btn btn-default">Innovation</div>
-   <div class="col-xs-6 col-sm-3 btn btn-default">Photography</div>
+  
+  <div id="textbox">
+  <h6 class="alignleft"> current availability for: </h6>
+  <h3 id="day" class="text-center lead">Sunday</h3>
   </div>
-   <div class="row">
-   <div class="col-xs-6 col-sm-3 btn btn-default">Food</div>
-   <div class="col-xs-6 col-sm-3 btn btn-default">Ruby</div>
-   <div class="col-xs-6 col-sm-3 btn btn-default">Programming</div>
-   <div class="col-xs-6 col-sm-3 btn btn-default">Javascript</div>
-  </div>
-  </script>
+  <div id="slider-area" class="text-center"></div>
+  <br>
+  <input type="button" id="add-new-time" value="Add New"/>
+  
+  <h1 class="text-center lead">Categories</h1>
+  <div class="row">
+  <div class="col-xs-6 col-sm-3 btn btn-category">Big Data</div>
+  <div class="col-xs-6 col-sm-3 btn btn-default">Fitness</div>
+  <div class="col-xs-6 col-sm-3 btn btn-default">User Experience</div>
+  <div class="col-xs-6 col-sm-3 btn btn-default">Startups</div>
+</div>
+  <div class="row">
+  <div class="col-xs-6 col-sm-3 btn btn-default">Animals</div>
+  <div class="col-xs-6 col-sm-3 btn btn-default">Artificial Intelligence</div>
+  <div class="col-xs-6 col-sm-3 btn btn-default">Innovation</div>
+  <div class="col-xs-6 col-sm-3 btn btn-default">Photography</div>
+</div>
+  <div class="row">
+  <div class="col-xs-6 col-sm-3 btn btn-default">Food</div>
+  <div class="col-xs-6 col-sm-3 btn btn-default">Ruby</div>
+  <div class="col-xs-6 col-sm-3 btn btn-default">Programming</div>
+  <div class="col-xs-6 col-sm-3 btn btn-default">Javascript</div>
+</div> <br> <br>
+</script>
 
 
-  <!-- TEMPLATE FOR EVENTS PAGE -->
-  <script type="text/template" id="event-template">
+
+
+
+
+                               <!-- TEMPLATE FOR EVENTS PAGE -->
+
+<script type="text/template" id="event-template">
       <div class="post-container">
           <div class="post-thumb">
               <h2>{{day}}</h2>
@@ -168,49 +176,47 @@
       </div>
   </script>
 
-
-  <!-- SKELETON -->
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ <%= csrf_meta_tags %>
 </head>
 <body>
 <% if user_signed_in? %>
 <nav>
-  <a href="/#/events"><img src="#" alt="logo"></a>
-  <a href="/#/events"><img src="/imgs/calendar.svg">Events</a>
-  <a href="/#/events/new"><img src="/imgs/add-event.svg">Create Event</a>
-  <form>
-    <img src="/imgs/search.svg">
-    <input placeholder="Search"/>
-  </form>
-  <div id="nav-right">
-    <div id="drop-down">
-      <img src="/imgs/settings.svg"><%= current_user.email %></a>
-      <div id="nav-right-dropdown">
-        <a href="/#/users/profile">Profile</a>
-        <!-- <a href="/users/edit">Change password</a> -->
-        <a href="/users/sign_out" class="navbar-link" rel="nofollow" data-method="delete">Log Out</a>
-      </div>
-    </div>
-  <div>
+ <a href="/#/events"><img src="#" alt="logo"></a>
+ <a href="/#/events"><img src="/imgs/calendar.svg">Events</a>
+ <a href="/#/events/new"><img src="/imgs/add-event.svg">Create Event</a>
+ <form>
+   <img src="/imgs/search.svg">
+   <input placeholder="Search"/>
+ </form>
+ <div id="nav-right">
+   <div id="drop-down">
+     <img src="/imgs/settings.svg"><%= current_user.email %></a>
+     <div id="nav-right-dropdown">
+       <a href="/#/users/profile">Profile</a>
+       <!-- <a href="/users/edit">Change password</a> -->
+       <a href="/users/sign_out" class="navbar-link" rel="nofollow" data-method="delete">Log Out</a>
+     </div>
+   </div>
+ <div>
 </nav>
 
-  <!--Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> -->
+ <!--Logged in as <strong><%= current_user.email %></strong>.
+ <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+ <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> -->
 <% else %>
-  <div class="container">
+ <div class="container">
 
 <video autoplay loop poster="/app/assets/images/campfire.png" id="bgvid">
 <source src="http://ak6.picdn.net/shutterstock/videos/4500722/preview/stock-footage-young-people-socialising-together-and-having-fun-student-house-accommodation-flat-share-with.mp4" type="video/mp4">
 </video>
 
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+ <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+ <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 <div id="main-content">
-  <%= yield %>
+ <%= yield %>
 </div>
 
 </div>

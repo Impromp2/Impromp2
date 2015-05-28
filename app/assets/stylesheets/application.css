@@ -307,3 +307,22 @@ body {
 .footer a {
   color: white;
 }
+
+.btn-custom {
+  background-color: hsl(312, 80%, 43%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e727c0", endColorstr="#c515a2");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#e727c0), to(#c515a2));
+  background-image: -moz-linear-gradient(top, #e727c0, #c515a2);
+  background-image: -ms-linear-gradient(top, #e727c0, #c515a2);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e727c0), color-stop(100%, #c515a2));
+  background-image: -webkit-linear-gradient(top, #e727c0, #c515a2);
+  background-image: -o-linear-gradient(top, #e727c0, #c515a2);
+  background-image: linear-gradient(#e727c0, #c515a2);
+  border-color: #c515a2 #c515a2 hsl(312, 80%, 40.5%);
+  color: #fff !important;
+}
+.btn-category {
+  background-color: grey;
+  color: white;
+}
