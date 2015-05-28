@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require mustache
 
+//= require ./nav-dropdown.js
 //= require ./libraries/underscore
 //= require ./libraries/backbone
 //= require ./libraries/moment

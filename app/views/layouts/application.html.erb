@@ -4,42 +4,42 @@
   <title>Impromp2</title>
   <!-- TEMPLATES -->
   <script type="text/template" id="range-template">
-  <div class="slider-container replace">
-    <div class="slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-      <div class="hour-lines">
-        <div class="line-morning">
-          <div class="line">
+    <div class="slider-container replace">
+      <div class="slider-range ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+        <div class="hour-lines">
+          <div class="line-morning">
+            <div class="line">
+            </div>
+          </div>
+          <div class="line-noon">
+            <div class="line">
+            </div>
+          </div>
+          <div class="line-midnight">
+            <div class="line">
+            </div>
           </div>
         </div>
-        <div class="line-noon">
-          <div class="line">
-          </div>
+        <div class="p-lines">
+            <div class="p-morning">12 AM</div>
+            <div class="p-noon">12 Noon</div>
+            <div class="p-midnight">11:59 PM</div>
         </div>
-        <div class="line-midnight">
-          <div class="line">
+        <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 15%;">
+          <div>
+            <p type="text" id="amount" readonly="" style="border:0; color:#f6931f; font-weight:bold;"></p>
           </div>
-        </div>
+        </span>
+        <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 60%;">
+          <div>
+            <p type="text" id="amount2" readonly="" style="border:0; color:#f6931f; font-weight:bold;"></p>
+          </div>
+        </span>
       </div>
-      <div class="p-lines">
-          <div class="p-morning">12 AM</div>
-          <div class="p-noon">12 Noon</div>
-          <div class="p-midnight">11:59 PM</div>
+      <div class="delete">
+        <input type="submit" value="x"/>
       </div>
-      <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 15%;">
-        <div>
-          <p type="text" id="amount" readonly="" style="border:0; color:#f6931f; font-weight:bold;"></p>
-        </div>
-      </span>
-      <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 60%;">
-        <div>
-          <p type="text" id="amount2" readonly="" style="border:0; color:#f6931f; font-weight:bold;"></p>
-        </div>
-      </span>
     </div>
-    <div class="delete">
-      <input type="submit" value="x"/>
-    </div>
-  </div>
   </script>
   <script type="text/template" id="edit-user-template">
     <form method="/users" action="POST">
@@ -138,27 +138,25 @@
       <br>
       <br>
     </form>
-  </script>
-  <script type="text/template" id="edit-categories-template">
+
+    <h1>Available Times</h1>
+    <div id="days">
+      <input type="submit" id="sunday" class="day-button day-selected" value="Sunday"/>
+      <input type="submit" id="monday" class="day-button" value="Monday"/>
+      <input type="submit" id="tuesday" class="day-button" value="Tuesday"/>
+      <input type="submit" id="wednesday" class="day-button" value="Wednesday"/>
+      <input type="submit" id="thursday" class="day-button" value="Thursday"/>
+      <input type="submit" id="friday" class="day-button" value="Friday"/>
+      <input type="submit" id="saturday" class="day-button" value="Saturday"/>
+    </div>
+
+    <h1 id="day">Sunday</h1>
+    <div id="slider-area"></div>
+    <input type="button" id="add-new-time" value="Add New"/>
+    
     <h1>Categories</h1>
   </script>
-  <script type="text/template" id="edit-availabilities-template">
-    <div id="days">
-    <h2> AVAILABILITIES </h2>
-    <input type="submit" id="sunday" class="day-button day-selected" value="Sunday"/>
-    <input type="submit" id="monday" class="day-button" value="Monday"/>
-    <input type="submit" id="tuesday" class="day-button" value="Tuesday"/>
-    <input type="submit" id="wednesday" class="day-button" value="Wednesday"/>
-    <input type="submit" id="thursday" class="day-button" value="Thursday"/>
-    <input type="submit" id="friday" class="day-button" value="Friday"/>
-    <input type="submit" id="saturday" class="day-button" value="Saturday"/>
-  </div>
 
-  <input type="button" id="add-new-time" value="Add New"/>
-  <h1 id="day">Sunday</h1>
-  <div id="slider-area"></div>
-
-  </script>
 
   <script type="text/template" id="event-template">
     <div>{{name}} | {{location_name}} | {{category}} | {{time}}</div>

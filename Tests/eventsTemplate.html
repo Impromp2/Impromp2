@@ -1,106 +1,46 @@
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
-      rel="stylesheet">
+     rel="stylesheet">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <style>
-body {
-    background: #fff;
-}
 
-.data {
-    width: 300px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.data:hover{
-    overflow: visible; 
-    white-space: normal; 
-    width: auto;
-    position: absolute;
-    background-color:#FFF;
-}
-.data:hover+div {
-    margin-top:20px;
-}
-
-.fill {
-    background: #fff; 
-    height: 100%;
-    position: absolute;
-    width: 100%;
-}
-.post-container { 
-    overflow: auto
-}
-.container {
-      margin: 20px; 
-}
-.post-thumb {
-    float: left;
-/*    border: 5px solid grey;*/
-
-}
-
-.post-content {
-    margin-left: 210px
-}
-.post-title {
-    font-weight: bold;
-    font-size: 200%
-}
-.alignleft {
-  float: left;
-}
-.alignright {
-  float: right;
-}
-.footer {
-  background: black;
-  color: white;
-  height: 50px;
-}
-.footer a {
-  color: white;
-}
 </style>
 <body>
-    <div class="container">
-        <div id="textbox">
-            <h1 class="alignleft"> Week &nbsp; {{first day}} - {{last day}} </h1>
-            <a href="#" class="alignright">
-                <img src="https://cdn4.iconfinder.com/data/icons/eldorado-work/40/calendar_5-512.png" width="90px" height="90px">
-                </a>
-            </div>
-            <div style="clear: both;"></div>
-            <hr />
-            <div class="post-container">
-                <div class="post-thumb">
-                    <h2>{{dow?}}</h2>
-                    <h4> {{date?}} </h4>
-                </div>
-                <div class="post-content">
-                    <div class="allRows">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-2">{{event.time}}</div>
-                            <div class="col-xs-6 col-sm-4">
-                                <p class="data"> {{Virtual Meetup: JavaScript Object Oriented Programming}}
-  {{Recent innovations in storage, like SanDisk's new InfiniFlash offering, are driving higher storage densities and lower prices. Flash-optimized-NoSQL has the scalability to handle InfinFlash's 512G of Flash, and a two node HA DB cluster capable of over 1M TPS could fit in only 5u.}}</p>
+   <div class="container">
+       <div id="textbox">
+           <h1 class="alignleft"> Week &nbsp; {{first day}} - {{last day}} </h1>
+           <a href="#" class="alignright">
+               <img src="https://cdn4.iconfinder.com/data/icons/eldorado-work/40/calendar_5-512.png" width="90px" height="90px">
+               </a>
+           </div>
+           <div style="clear: both;"></div>
+           <hr />
+           <div class="post-container">
+               <div class="post-thumb">
+                   <h2>{{dow?}}</h2>
+                   <h4> {{date?}} </h4>
+               </div>
+               <div class="post-content">
+                   <div class="allRows">
+                       <div class="row">
+                           <div class="col-xs-6 col-sm-2">{{event.time}}</div>
+                           <div class="col-xs-6 col-sm-4">
+                               <p class="data"> {{Virtual Meetup: JavaScript Object Oriented Programming}}
+ {{Recent innovations in storage, like SanDisk's new InfiniFlash offering, are driving higher storage densities and lower prices. Flash-optimized-NoSQL has the scalability to handle InfinFlash's 512G of Flash, and a two node HA DB cluster capable of over 1M TPS could fit in only 5u.}}</p>
+                           </div>
+                           <div class="col-xs-6 col-sm-3">
+                               <p>{{event.categories rfhtgdh}}</p>
+                           </div>
+                           <div class="col-xs-6 col-sm-3">{{attendee_limit}}: </div>
+                       </div>
+                   </div>
+               </div>
+               <br><br><hr />
+                   </div>
                             </div>
-                            <div class="col-xs-6 col-sm-3">
-                                <p>{{event.categories rfhtgdh}}</p>
-                            </div>
-                            <div class="col-xs-6 col-sm-3">{{attendee_limit}}: </div>
-                        </div>
-                    </div>
-                </div>
-                <br><br><hr />
-                    </div>
-                             </div>
-                    <div class ="text-center footer">
-                        <a href="#">
-                            <h1> NEXT WEEK </h1>
-                        </a>
-                    </div>
-           
-                </body>
+                   <div class ="text-center footer">
+                       <a href="#">
+                           <h1> NEXT WEEK </h1>
+                       </a>
+                   </div>
+          
+               </body>
