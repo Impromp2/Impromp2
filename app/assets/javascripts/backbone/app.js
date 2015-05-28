@@ -15,7 +15,7 @@ Impromp2App.initialize = function(){
 
   eventCollection.fetch();
   availabilityCollection.fetch();
-  console.log(Impromp2App.currentUser);
+
   console.log(availabilityCollection);
   // Impromp2App.availabilities = Impromp2App.currentUser.attributes.availabilities;
 };
