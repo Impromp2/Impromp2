@@ -4,14 +4,20 @@ var eventCollection;
 
 Impromp2App.initialize = function(){
   var eventCollection = new Impromp2App.Collections.EventCollection();
+  var availabilityCollection = new Impromp2App.Collections.AvailabilityCollection();
   var listView = new Impromp2App.Views.EventListView({
-        collection: eventCollection,
-        el: $('#main-content')
+    collection: eventCollection,
+    el: $('#main-content')
   });
 
   Impromp2App.currentUser = new Impromp2App.Models.User();
   Impromp2App.currentUser.fetch();
+
   eventCollection.fetch();
+  availabilityCollection.fetch();
+
+  console.log(availabilityCollection);
+  // Impromp2App.availabilities = Impromp2App.currentUser.attributes.availabilities;
 };
 
 

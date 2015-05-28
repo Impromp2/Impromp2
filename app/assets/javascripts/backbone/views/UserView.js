@@ -14,6 +14,7 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
 
   render: function(){
     var html = Mustache.render(this.editTemplate, this.model.attributes);
+    console.log(this.model.attributes);
     this.$el.append(html);
   },
 
