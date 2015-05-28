@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ./libraries/jquery-ui.min.js
 //= require twitter/bootstrap
 //= require turbolinks
 //= require mustache
@@ -23,8 +24,9 @@
 //= require ./backbone/app
 //= require ./backbone/models/Event
 //= require ./backbone/models/User
+//= require ./backbone/models/Availability
 //= require ./backbone/collections/EventCollection
+//= require ./backbone/collections/AvailabilityCollection
 //= require ./backbone/views/events/EventView
 //= require ./backbone/views/events/EventListView
 //= require ./backbone/views/UserView
-//= require_tree .
