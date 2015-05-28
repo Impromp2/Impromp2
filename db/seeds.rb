@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Category.delete_all
-# Event.delete_all
-
+Event.delete_all
+Availability.delete_all
 # Category.create({category: "big data"})
 # Category.create({category: "fitness"})
 # Category.create({category: "user experience"})
@@ -402,26 +402,26 @@ Event.create({
  categories: "user experience"
 })
 
-# Availability.create({
-#   user_id: 1,
-#   day_of_the_week: 'Monday',
-#   start_time: 3,
-#   end_time: 4
-# })
+Availability.create({
+  user_id: 1,
+  day_of_the_week: 'Monday',
+  start_time: 3,
+  end_time: 4
+})
 
-# Availability.create({
-#   user_id: 1,
-#   day_of_the_week: 'Wednesday',
-#   start_time: 6,
-#   end_time: 7
-# })
+Availability.create({
+  user_id: 1,
+  day_of_the_week: 'Wednesday',
+  start_time: 6,
+  end_time: 7
+})
 
-# Availability.create({
-#   user_id: 1,
-#   day_of_the_week: 'Friday',
-#   start_time: 15,
-#   end_time: 18
-# })
+Availability.create({
+  user_id: 1,
+  day_of_the_week: 'Friday',
+  start_time: 15,
+  end_time: 18
+})
 
 Availability.create({
   user_id: 1,
@@ -430,9 +430,9 @@ Availability.create({
   end_time: 23
 })
 
-# Availability.create({
-#   user_id: 1,
-#   day_of_the_week: 'Sunday',
-#   start_time: 1,
-#   end_time: 4
-# })
+Availability.create({
+  user_id: 1,
+  day_of_the_week: 'Sunday',
+  start_time: 1,
+  end_time: 4
+})
