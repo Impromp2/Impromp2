@@ -1,8 +1,11 @@
 var Impromp2App = Impromp2App || { Models: {}, Collections: {}, Views: {} };
 
+
 var eventCollection;
 
 Impromp2App.initialize = function(){
+
+  console.log('app initialized');
   var eventCollection = new Impromp2App.Collections.EventCollection();
   // var availabilityCollection = new Impromp2App.Collections.AvailabilityCollection();
   var listView = new Impromp2App.Views.EventListView({
@@ -10,10 +13,10 @@ Impromp2App.initialize = function(){
     el: $('#main-content')
   });
 
-  Impromp2App.currentUser = new Impromp2App.Models.User();
-  Impromp2App.currentUser.fetch();
-
-  eventCollection.fetch();
+  var promise = eventCollection.fetch();
+  promise.done(function(){
+    console.log('events fetched')
+  })
   // availabilityCollection.fetch();
 
   // console.log(availabilityCollection);
@@ -24,6 +27,12 @@ Impromp2App.initialize = function(){
 
 $(function(){
   var Router = Backbone.Router.extend({
+    initialize: function(){
+      console.log('in router init')
+      $('#main-content').empty();
+      Impromp2App.initialize();
+
+    },
 
     routes: {
       '': 'index',
@@ -33,10 +42,10 @@ $(function(){
     },
 
     index: function(){
+            $("#main-content").empty();
+
       //checks if the page has been loaded. If not, runs the initialize function. (This prevents the eventListView from rendering twice)
   
-      $('#main-content').empty();
-      Impromp2App.initialize();
     },
 
     new: function(){
@@ -44,29 +53,38 @@ $(function(){
     },
 
     profile: function(){
+      console.log('in profile route')
+      $("#main-content").empty();
 
-      console.log("profile will go here");
-        $("#main-content").empty();
         var userEditView = new Impromp2App.Views.UserEditView({
           model: Impromp2App.currentUser,
           el: $('#main-content')
         });
         userEditView.render();
-        // var userAvailabilitiesView = new Impromp2App.Views.UserAvailabilitiesView({
-        //   model: Impromp2App.currentUser,
-        //   el: $('#main-content')
-        // });
-        // userAvailabilitiesView.render();
-        // var userCategoriesView = new Impromp2App.Views.UserCategoriesView({
-        //   model: Impromp2App.currentUser,
-        //   el: $('#main-content')
-        // });
-        // userCategoriesView.render();
+
+
+    
+
+      // var userAvailabilitiesView = new Impromp2App.Views.UserAvailabilitiesView({
+      //   model: Impromp2App.currentUser,
+      //   el: $('#main-content')
+      // });
+      // userAvailabilitiesView.render();
+      // var userCategoriesView = new Impromp2App.Views.UserCategoriesView({
+      //   model: Impromp2App.currentUser,
+      //   el: $('#main-content')
+      // });
+      // userCategoriesView.render();
     }
 
   });
+  
+  Impromp2App.currentUser = new Impromp2App.Models.User();
+  var promise = Impromp2App.currentUser.fetch();
+  
+  promise.done(function(){
+    var myRouter = new Router();
+    Backbone.history.start();
+  });
 
-
-  var myRouter = new Router();
-  Backbone.history.start();
 });
