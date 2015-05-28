@@ -8,17 +8,17 @@ Impromp2App.Models.User = Backbone.Model.extend({
   },
   urlRoot: "/user",
   sync: function(method, model, options) {
-        options || (options = {});
-        switch (method) {
-          case "read":
-            options.url = "/user";
-            return Backbone.sync(method, model, options);
-          break;
-          case "update":
-            options.url = "/user"
-            return Backbone.sync(method, model, options);
-          break;
-        }
+    options || (options = {});
+    switch (method) {
+      case "read":
+        options.url = "/user";
+        return Backbone.sync(method, model, options);
+      break;
+      case "update":
+        options.url = "/user";
+        return Backbone.sync(method, model, options);
+      break;
+    }
   }
 });
 

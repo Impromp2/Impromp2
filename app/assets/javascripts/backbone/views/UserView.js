@@ -9,7 +9,7 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
   editTemplate: $('#edit-user-template').text(),
 
   events: {
-    'submit #button': "update"
+    'submit': "update"
   },
 
   render: function(){
@@ -21,8 +21,11 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
     this.$el.html(html);
   },
 
-  update: function(){
-    this.set('first_name', 'params[:first_name]')
+  update: function(event){
+    event.preventDefault();
+    console.log(this.$el.find("input[name='first_name']").val());
+    this.model.set("first_name", this.$el.find("input[name='first_name']").val());
+    this.model.save();
   }
 });
 
