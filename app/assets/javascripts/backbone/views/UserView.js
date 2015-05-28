@@ -13,36 +13,49 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
   },
 
   render: function(){
-    Impromp2App.currentUser = new Impromp2App.Models.User();
-    Impromp2App.currentUser.fetch();
-    console.log(Impromp2App.currentUser);
-    // this.$el.empty();
     var html = Mustache.render(this.editTemplate, this.model.attributes);
-    this.$el.html(html);
+    this.$el.append(html);
   },
 
   update: function(e){
     e.preventDefault()
-    // this.$el.html(this.editTemplate( this.model.attributes ));
     var first_name = this.$el.find('input[data-input="first_name"]').val();
-    // var newName = nameField.val();
-    // nameField.val('');
-    // to test what 'this' is in the current scope
-    this.model.set('first_name', first_name);
-    // user: _.clone( this.attributes )
-    this.model.save()
-    // $.ajax({
-    //   url: "/user",
-    //   type: "PUT",
-    //   dataType: "json",
-    //   data: {
-    //     'first_name' : first_name
-    //   }
-    // }).done(function(){
-    //   console.log('hi')
-    // })
-    // self.model.save();
+    var last_name = this.$el.find('input[data-input="last_name"]').val();
+    var image_url = this.$el.find('input[data-input="image_url"]').val();
+    var zipcode = this.$el.find('input[data-input="zipcode"]').val();
+    var email = this.$el.find('input[data-input="email"]').val();
 
+    this.model.set('first_name', first_name);
+    this.model.set('last_name', last_name);
+    this.model.set('image_url', image_url);
+    this.model.set('zipcode', zipcode);
+    this.model.set('email', email);
+
+    this.model.save()
+
+
+  }
+});
+
+Impromp2App.Views.UserAvailabilitiesView = Backbone.View.extend({
+  initialize: function(){
+    this.listenTo( this.model, "change", this.render)
+  },
+  availabilitiesTemplate: $("#edit-availabilities-template").text(),
+  render: function(){
+    var html = Mustache.render(this.availabilitiesTemplate, this.model.attributes);
+    this.$el.append(html);
+  }
+});
+
+Impromp2App.Views.UserCategoriesView = Backbone.View.extend({
+  initialize: function(){
+    this.listenTo( this.model, "change", this.render)
+  },
+  availabilitiesTemplate: $("#edit-categories-template").text(),
+  render: function(){
+    var html = Mustache.render(this.availabilitiesTemplate, this.model.attributes);
+    this.$el.append(html);
   }
 });
 

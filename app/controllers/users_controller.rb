@@ -11,6 +11,11 @@ class UsersController < ApplicationController
   def update
     update = JSON.parse(params["user "])
     current_user.first_name = update['first_name']
+    current_user.last_name = update['last_name']
+    current_user.image_url = update['image_url']
+    current_user.zipcode = update['zipcode']
+    current_user.email = update['email']
+
     current_user.save()
   end
 
