@@ -43,22 +43,51 @@
   </script>
   <script type="text/template" id="edit-user-template">
     <form method="/users" action="POST">
-      <img src='{{image_url}}'>
+    <br>
+      <img src='{{image_url}}' width="250px" height="250px">
+      <br><br>
+      <label>Change Picture
+      </label>
       <input data-input="image_url" value="{{image_url}}"/>
-      <label>First Name
+      <br>
+      <label>First NAME
       </label>
       <input data-input="first_name" value="{{first_name}}"/>
+      <br>
       <label>Last Name
       </label>
       <input data-input="last_name" value="{{last_name}}" />
+      <br>
       <label>Zip Code
       </label>
       <input data-input="zipcode" value="{{zipcode}}" />
+      <br>
       <label>Email
       </label>
       <input data-input="email" value="{{email}}" />
+      <br><br>
       <button>Save</button>
+      <br>
+      <br>
     </form>
+<<<<<<< HEAD
+=======
+  </script>
+  <script type="text/template" id="edit-categories-template">
+    <h1>Categories</h1>
+  </script>
+  <script type="text/template" id="edit-availabilities-template">
+    <div id="days">
+    <h2> AVAILABILITIES </h2>
+    <input type="submit" id="sunday" class="day-button day-selected" value="Sunday"/>
+    <input type="submit" id="monday" class="day-button" value="Monday"/>
+    <input type="submit" id="tuesday" class="day-button" value="Tuesday"/>
+    <input type="submit" id="wednesday" class="day-button" value="Wednesday"/>
+    <input type="submit" id="thursday" class="day-button" value="Thursday"/>
+    <input type="submit" id="friday" class="day-button" value="Friday"/>
+    <input type="submit" id="saturday" class="day-button" value="Saturday"/>
+  </div>
+>>>>>>> d85be011da97ee17c7254d118cab3afb30b9c9e4
 
     <h1>Available Times</h1>
     <div id="days">

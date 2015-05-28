@@ -218,3 +218,92 @@ background-size: cover;
     background-color: lightgray;
   }
  
+
+ img.avatar,
+div.avatar {
+  border: 1px solid #eee;
+  width: 122px;
+  height: 122px;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+body {
+    background: #fff;
+}
+
+.data {
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.data:hover{
+    overflow: visible; 
+    white-space: normal; 
+    width: auto;
+    position: absolute;
+    background-color:#FFF;
+}
+.data:hover+div {
+    margin-top:20px;
+}
+
+.fill {
+    background: #fff; 
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.post-container { 
+    overflow: auto
+}
+.container {
+      margin: 20px; 
+}
+.post-thumb {
+    float: left;
+/*    border: 5px solid grey;*/
+
+}
+
+.post-content {
+    margin-left: 210px
+}
+.post-title {
+    font-weight: bold;
+    font-size: 200%
+}
+.alignleft {
+  float: left;
+}
+.alignright {
+  float: right;
+}
+.footer {
+  background: black;
+  color: white;
+  height: 50px;
+}
+.footer a {
+  color: white;
+}
