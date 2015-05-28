@@ -28,6 +28,10 @@ a {
   color: black;
 }
 
+#impromptu-logo{
+  width: 100px;
+}
+
 a:hover {
   color: limegreen;
 }
