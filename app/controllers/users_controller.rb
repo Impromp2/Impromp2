@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     current_user.email = update['email']
 
     current_user.save()
+    render json: current_user
   end
 
 end

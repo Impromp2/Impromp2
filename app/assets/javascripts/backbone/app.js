@@ -40,7 +40,6 @@ $(function(){
     profile: function(){
 
       console.log("profile will go here");
-        // $('#main-content').empty();
         $("#main-content").empty()
         var userEditView = new Impromp2App.Views.UserEditView({
           model: Impromp2App.currentUser,
