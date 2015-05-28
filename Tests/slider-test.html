@@ -37,25 +37,6 @@
         min: 0,
         max: 24,
         values: [3, 5],
-        // slide: function( event, ui ) {
-        //   var num1 = $( "#slider-range" ).slider( "values", 0 )
-        //   var num2 = $( "#slider-range" ).slider( "values", 1 )
-        //   console.log(num1, num2)
-        //   if(num1 > 12 ) {
-        //     $( "#amount" ).text(num1 - 12 + " pm");
-        //   } else if (num1 === 12){
-        //     $( "#amount" ).text(num1 - 12 + " pm");
-        //   } else if (num1 === 0) {
-        //     $( "#amount" ).text('12 am');
-        //   } else {
-        //     $( "#amount" ).text(num1 + " am");
-        //   }
-        //   if (num2 > 12 ){
-        //     $( "#amount2" ).text((num2 - 12) + " pm");
-        //   } else {
-        //     $( "#amount2" ).text(num2 + " am");
-        //   }
-        // },
          change: function( event, ui ) {
           console.log($( this ).slider( "instance" ).uuid);
           var num1 = $( this ).slider( "values", 0 )
@@ -208,9 +189,9 @@
     <input type="submit" id="saturday" class="day-button" value="Saturday"/>
   </div>
 
-  <input type="button" id="add-new-time" value="Add New"/>
   <h1 id="day">Sunday</h1>
   <div id="slider-area"></div>
+  <input type="button" id="add-new-time" value="Add New"/>
    
   <script type="text/template" id="range-template">
   <div class="slider-container replace">
