@@ -11,6 +11,13 @@ Impromp2App.Models.User = Backbone.Model.extend({
     var string = JSON.stringify( _.clone( this.attributes ));
     return "user =" + string;
   },
+  saveAvailabilitesToServer: function(){
+    $.ajax({
+      type: 'PUT',
+      url: 'api/availabilities',
+      data: this.get('availabilities')
+    });
+  },
   sync: function(method, model, options) {
     options || (options = {});
     switch (method) {

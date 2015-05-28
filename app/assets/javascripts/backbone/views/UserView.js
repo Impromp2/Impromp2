@@ -40,10 +40,10 @@ Impromp2App.Views.UserAvailabilitiesView = Backbone.View.extend({
     this.listenTo( this.model, "change", this.render);
 
   },
-  availabilitiesTemplate: $("#edit-availabilities-template").text(),
+  availabilitiesTemplate: $("#edit-availabilities-template"),
   render: function(){
-    var html = Mustache.render(this.availabilitiesTemplate, this.model.attributes);
-    this.$el.append(html);
+    // var html = Mustache.render(this.availabilitiesTemplate, this.model.attributes);
+    this.$el.append(this.availabilitiesTemplate);
   }
 });
 
