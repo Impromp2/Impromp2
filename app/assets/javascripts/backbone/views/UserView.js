@@ -70,7 +70,7 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
        min: 0,
        max: 24,
        create: function(){
-         $( this ).slider( "values", [val3, val4] );
+         $( this ).slider( "values", [val3 || 0, val4 || 0] );
        },
         change: function( event, ui ) {
          console.log($( this ).slider( "instance" ).uuid);
