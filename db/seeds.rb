@@ -94,3 +94,10 @@
 #   start_time: 15,
 #   end_time: 18
 # })
+
+Availability.create({
+  user_id: 1,
+  day_of_the_week: 'Saturday',
+  start_time: 1,
+  end_time: 23
+})

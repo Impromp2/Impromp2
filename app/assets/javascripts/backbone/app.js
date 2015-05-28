@@ -34,22 +34,29 @@ $(function(){
     },
 
     new: function(){
-      // Impromp2App.initialize();
       console.log("show route coming");
     },
 
     profile: function(){
 
-      // Impromp2App.initialize();
       console.log("profile will go here");
         // $('#main-content').empty();
-        var userEditView = new Impromp2App.Views.UserEditView({
-            model: Impromp2App.currentUser,
-            el: $('#main-content')
-          });
-        console.log(userEditView)
         $("#main-content").empty()
+        var userEditView = new Impromp2App.Views.UserEditView({
+          model: Impromp2App.currentUser,
+          el: $('#main-content')
+        });
         userEditView.render()
+        var userAvailabilitiesView = new Impromp2App.Views.UserAvailabilitiesView({
+          model: Impromp2App.currentUser,
+          el: $('#main-content')
+        });
+        userAvailabilitiesView.render()
+        var userCategoriesView = new Impromp2App.Views.UserCategoriesView({
+          model: Impromp2App.currentUser,
+          el: $('#main-content')
+        });
+        userCategoriesView.render()
     }
 
   });
