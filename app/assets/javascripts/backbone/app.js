@@ -12,6 +12,18 @@ Impromp2App.initialize = function(){
     collection: eventCollection,
     el: $('#main-content')
   });
+<<<<<<< HEAD
+=======
+
+  var promise = eventCollection.fetch();
+  promise.done(function(){
+    console.log('events fetched')
+  })
+  // availabilityCollection.fetch();
+
+  // console.log(availabilityCollection);
+  // Impromp2App.availabilities = Impromp2App.currentUser.attributes.availabilities;
+>>>>>>> 96b2d96e7a8e569809eafcba776ccdfc178aeb28
 };
 
 
