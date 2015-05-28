@@ -15,6 +15,7 @@
 
       initiate()
     });
+
     $(".day-button").on('click', function(){
       $(this).siblings().removeClass('day-selected')
       $(this).addClass('day-selected')
@@ -28,15 +29,26 @@
         }
       });
     });
+
     $("#slider-area").on('click','.delete input', function(){
       $(this).parents('.slider-container').remove()
     });
-    function initiate(val1, val2){
+
+    function sliderRender(val1, val2){
+      var template = $('#range-template').text().replace('replace', day);
+      $('#slider-area').append(template)
+      initiate(val1, val2)
+    }
+
+    function initiate(val3, val4){
+
       $( ".slider-range").slider({
         range: true,
         min: 0,
         max: 24,
-        values: [3, 5],
+        create: function(){
+          $( this ).slider( "values", [val3, val4] );
+        },
          change: function( event, ui ) {
           console.log($( this ).slider( "instance" ).uuid);
           var num1 = $( this ).slider( "values", 0 )
@@ -61,6 +73,8 @@
         }
       });
     } 
+    sliderRender(1,2)
+    sliderRender(4,5)
   });
   </script>
 
