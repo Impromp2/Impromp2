@@ -321,5 +321,8 @@ body {
   background-image: linear-gradient(#e727c0, #c515a2);
   border-color: #c515a2 #c515a2 hsl(312, 80%, 40.5%);
   color: #fff !important;
-
+}
+.btn-category {
+  background-color: grey;
+  color: white;
 }
