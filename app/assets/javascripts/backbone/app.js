@@ -24,14 +24,11 @@ Impromp2App.initialize = function(){
 };
 
 
-
 $(function(){
   var Router = Backbone.Router.extend({
     initialize: function(){
-      console.log('in router init')
       $('#main-content').empty();
       Impromp2App.initialize();
-
     },
 
     routes: {
