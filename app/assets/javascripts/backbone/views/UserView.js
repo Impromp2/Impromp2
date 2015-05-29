@@ -121,11 +121,17 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
     var sliderTimesJSON = [];
     var sliderArray = $(".slider-range").toArray();
     _.each(sliderArray, function(e){
+      sliderTimesObject = {};
       var sliderTimes = $(e).slider('values');
+      sliderTimesObject.start_time = sliderTimes[0];
+      sliderTimesObject.end_time = sliderTimes[1];
       var sliderDay = $(e).parent().attr('class').replace('slider-container ', '');
-      sliderTimes.push(sliderDay);
-      sliderTimesJSON.push(sliderTimes);
+      sliderTimesObject.day_of_the_week = sliderDay;
+      sliderTimesJSON.push(sliderTimesObject);
     });
+
+    var string = "availability =" + JSON.stringify( sliderTimesJSON );
+
     $.ajax({
       url: '/api/availabilities',
       type: 'DELETE'
@@ -134,8 +140,8 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
       $.ajax({
         url: '/api/availabilities',
         type: 'POST',
-        dataType: 'json',
-        data: sliderTimesJSON
+        // dataType: 'json',
+        data: string
       }).done(function(data){
         console.log('saved availabilities');
       });
