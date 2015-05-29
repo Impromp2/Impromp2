@@ -7,7 +7,7 @@ module Api
 
     def destroy
       availabilities = Availability.where(:user_id == current_user.id)
-      availabilities.destroy
+      availabilities.destroy()
       render json: availabilities
     end
   end
