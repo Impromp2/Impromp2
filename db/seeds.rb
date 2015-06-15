@@ -76,7 +76,7 @@ Event.create({
 
 Event.create({
   name: "Google I/O Extended 2015 New York City (Pace University)",
-  time: Time.new(2015,05,30,12,30),
+  time: Time.new(2015,06,16,12,30),
   attendee_limit: 25,
   location_name: "Pace",
   street: "349 Main Street",
@@ -89,7 +89,7 @@ Event.create({
 
 Event.create({
   name: "Virtual Meetup: Big Datas Application in the Business Environment",
-  time: Time.new(2015,05,30,15,00),
+  time: Time.new(2015,06,16,15,00),
   attendee_limit: 35,
   location_name: "A Bar",
   street: "3490 6th Avenue",
@@ -102,7 +102,7 @@ Event.create({
 
 Event.create({
   name: "Datacenter Visibility with Arista EOS DANZ and Corvil Network Analytics",
-  time: Time.new(2015,05,30,15,00),
+  time: Time.new(2015,06,16,15,00),
   attendee_limit: 40,
   location_name: "Place",
   street: "12 14th Street",
@@ -115,7 +115,7 @@ Event.create({
 
 Event.create({
   name: "Are You Serious?",
-  time: Time.new(2015,05,30,16,30),
+  time: Time.new(2015,06,16,16,30),
   attendee_limit: 40,
   location_name: "The Hatchery",
   street: "120 Park Avenue",
@@ -128,7 +128,7 @@ Event.create({
 
 Event.create({
   name: "Canonical Ubuntu OpenStack On Autopilot And OpenStack Networking With PLUMgrid",
-  time: Time.new(2015,05,31,16,30),
+  time: Time.new(2015,06,16,16,30),
   attendee_limit: 40,
   location_name: "MongoDB",
   street: "229 West 43rd Street",
@@ -141,7 +141,7 @@ Event.create({
 
 Event.create({
   name: "Build your Website with Joomla",
-  time: Time.new(2015,05,31,13,30),
+  time: Time.new(2015,06,16,13,30),
   attendee_limit: 40,
   location_name: "AACCT",
   street: "55 Chrystie Street",
@@ -154,7 +154,7 @@ Event.create({
 
 Event.create({
   name: "Electronics Night: Arduino Office Hours",
-  time: Time.new(2015,05,31,14,00),
+  time: Time.new(2015,06,17,14,00),
   attendee_limit: 15,
   location_name: "Hack Manhattan",
   street: "137 West 14th Street",
@@ -167,7 +167,7 @@ Event.create({
 
 Event.create({
   name: "Startup Book: Launching Your Self-Published Book (Pizza!)",
-  time: Time.new(2015,06,01,11,00),
+  time: Time.new(2015,06,17,11,00),
   attendee_limit: 20,
   location_name: "The Hatchery",
   street: "1601 Broadway",
@@ -180,7 +180,7 @@ Event.create({
 
 Event.create({
   name: "Come to Happy Hour with the Samsung Business Team",
-  time: Time.new(2015,06,01,12,00),
+  time: Time.new(2015,06,17,12,00),
   attendee_limit: 25,
   location_name: "Samsung",
   street: "92 Broadway",
@@ -193,7 +193,7 @@ Event.create({
 
 Event.create({
   name: "Django Girls Study Group @ Influenster",
-  time: Time.new(2015,06,01,13,00),
+  time: Time.new(2015,06,17,13,00),
   attendee_limit: 25,
   location_name: "Place",
   street: "298 Atlantic Avenue",
@@ -206,7 +206,7 @@ Event.create({
 
 Event.create({
   name: "Is What You Do Right For You?",
-  time: Time.new(2015,06,01,16,00),
+  time: Time.new(2015,06,18,16,00),
   attendee_limit: 30,
   location_name: "NYPL",
   street: "188 Madison Avenue",
@@ -220,7 +220,7 @@ Event.create({
 
 Event.create({
   name: "Rooftop Happy Hour",
-  time: Time.new(2015,06,02,15,30),
+  time: Time.new(2015,06,18,15,30),
   attendee_limit: 30,
   location_name: "Hudson Terrace",
   street: "621 West 46th Street",
@@ -233,7 +233,7 @@ Event.create({
 
 Event.create({
   name: "Drinks, Snacks and Hadoop! Join us for weekly evenings informational sessions.",
-  time: Time.new(2015,06,02,16,30),
+  time: Time.new(2015,06,18,16,30),
   attendee_limit: 30,
   location_name: "Quantilus Inc",
   street: "115 Broadway",
@@ -246,7 +246,7 @@ Event.create({
 
 Event.create({
   name: "Spring Happy Hour with Startup Weekend at Pier A Harbor House",
-  time: Time.new(2015,06,02,18,30),
+  time: Time.new(2015,06,18,18,30),
   attendee_limit: 30,
   location_name: "Pier A Harbor House",
   street: "22 Battery Place",
@@ -259,7 +259,7 @@ Event.create({
 
 Event.create({
   name: "Spring Happy Hour with Startup Weekend at Pier A Harbor House",
-  time: Time.new(2015,06,02,18,30),
+  time: Time.new(2015,06,18,18,30),
   attendee_limit: 30,
   location_name: "Pier A Harbor House",
   street: "22 Battery Place",
@@ -272,7 +272,7 @@ Event.create({
 
 Event.create({
   name: "OpenShop at JC Fab Lab!",
-  time: Time.new(2015,06,02,19,00),
+  time: Time.new(2015,06,19,19,00),
   attendee_limit: 12,
   location_name: "Towhee co / JC Fab Lab",
   street: "195 New York Ave.",
@@ -285,7 +285,7 @@ Event.create({
 
 Event.create({
   name: "YeSQL: Battling the NoSQL Hype Cycle with Postgres (+beer, drinks, swag, food)",
-  time: Time.new(2015,06,03,15,00),
+  time: Time.new(2015,06,19,15,00),
   attendee_limit: 20,
   location_name: "Thoughtworks",
   street: "99 Madison Ave.",
@@ -298,7 +298,7 @@ Event.create({
 
 Event.create({
   name: "Test Tube - May",
-  time: Time.new(2015,06,03,15,00),
+  time: Time.new(2015,06,19,15,00),
   attendee_limit: 20,
   location_name: "WeWork Fulton Street",
   street: "222 Broadway",
@@ -311,7 +311,7 @@ Event.create({
 
 Event.create({
   name: "Meet for SPEED",
-  time: Time.new(2015,06,03,15,30),
+  time: Time.new(2015,06,19,15,30),
   attendee_limit: 35,
   location_name: "HQ",
   street: "49 West 18th Street",
@@ -324,7 +324,7 @@ Event.create({
 
 Event.create({
   name: "Inside Startups Mixer",
-  time: Time.new(2015,06,03,17,30),
+  time: Time.new(2015,06,19,17,30),
   attendee_limit: 40,
   location_name: "Startup Land",
   street: "208 57th Street",
@@ -337,7 +337,7 @@ Event.create({
 
 Event.create({
   name: "DO Engineers: Sean (Thor) Swehla & Chris Paro",
-  time: Time.new(2015,06,03,18,30),
+  time: Time.new(2015,06,19,18,30),
   attendee_limit: 40,
   location_name: "Digital Ocean",
   street: "29 West 23rd Street",
@@ -350,7 +350,7 @@ Event.create({
 
 Event.create({
  name: "Petascale Key Value Stores and App Driven Analytics (+ swag, beer/drinks, candy)",
- time: Time.new(2015,06,04,14,30),
+ time: Time.new(2015,06,19,14,30),
  attendee_limit: 100,
  location_name: "ThoughtWorks",
  street: "99 Madison Ave., 15th Floor",
@@ -363,7 +363,7 @@ Event.create({
 
 Event.create({
  name: "Intro to Web Development Workshop",
- time: Time.new(2015,06,04,15,00),
+ time: Time.new(2015,06,19,15,00),
  attendee_limit: 45,
  location_name: "needs location",
  street: "needs location",
@@ -377,7 +377,7 @@ Event.create({
 
 Event.create({
  name: "The UX of Tomorrow: Designing for the Unknown",
- time: Time.new(2015,06,04,13,30),
+ time: Time.new(2015,06,19,13,30),
  attendee_limit: 20,
  location_name: "Shutterstock",
  street: "347 5th Ave",
@@ -391,7 +391,7 @@ Event.create({
 
 Event.create({
  name: "'So You Want A Career in UX' Panel",
- time: Time.new(2015,06,04,14,00),
+ time: Time.new(2015,06,20,14,00),
  attendee_limit: 50,
  location_name: "This location is shown only to members",
  street: "This location is shown only to members",
@@ -405,15 +405,29 @@ Event.create({
 Availability.create({
   user_id: 1,
   day_of_the_week: 'Monday',
-  start_time: 3,
-  end_time: 4
+  start_time: 13,
+  end_time: 22
+})
+
+Availability.create({
+  user_id: 1,
+  day_of_the_week: 'Tuesday',
+  start_time: 13,
+  end_time: 22
 })
 
 Availability.create({
   user_id: 1,
   day_of_the_week: 'Wednesday',
-  start_time: 6,
-  end_time: 7
+  start_time: 16,
+  end_time: 24
+})
+
+Availability.create({
+  user_id: 1,
+  day_of_the_week: 'Thursday',
+  start_time: 16,
+  end_time: 24
 })
 
 Availability.create({
