@@ -1,9 +1,11 @@
 var Impromp2App = Impromp2App || { Models: {}, Collections: {}, Views: {} };
 
+
 var eventCollection;
 
 Impromp2App.initialize = function(){
 
+  
 };
 
 
