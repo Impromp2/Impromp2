@@ -34,6 +34,7 @@ gem 'font-awesome-rails'
 gem 'mustache-js-rails'
 gem 'simple_form'
 gem 'httparty', '~> 0.13.5'
+gem 'whenever', :require => false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
