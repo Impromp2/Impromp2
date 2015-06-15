@@ -25,7 +25,6 @@ Impromp2App.Views.EventView = Backbone.View.extend({
     var eventObjects = events.map(function(event){
       return event.attributes;
     })
-    console.log(eventObjects)
 
     var renderedEvent = Mustache.render(this.template, {day: day, daydesc: daydesc, events: eventObjects});
     // debugger
