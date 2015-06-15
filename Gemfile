@@ -33,6 +33,7 @@ gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
 gem 'mustache-js-rails'
 gem 'simple_form'
+gem 'httparty', '~> 0.13.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

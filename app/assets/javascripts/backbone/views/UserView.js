@@ -119,6 +119,7 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
 
   saveAvailabilities: function(){
     var sliderTimesJSON = [];
+    Impromp2App.currentUser.attributes.availabilities = [];
     var sliderArray = $(".slider-range").toArray();
     _.each(sliderArray, function(e){
       sliderTimesObject = {};
@@ -127,9 +128,8 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
       sliderTimesObject.end_time = sliderTimes[1];
       var sliderDay = $(e).parent().attr('class').replace('slider-container ', '');
       sliderTimesObject.day_of_the_week = sliderDay;
-      if(sliderTimesJSON.indexOf(sliderTimesObject) === -1){
-        sliderTimesJSON.push(sliderTimesObject);
-      }
+      sliderTimesJSON.push(sliderTimesObject);
+      Impromp2App.currentUser.attributes.availabilities.push(sliderTimesObject);
     });
 
     var string = "availability =" + JSON.stringify( sliderTimesJSON );
