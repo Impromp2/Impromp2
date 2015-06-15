@@ -12,19 +12,18 @@ module Api
     end
 
     def create
+      update = JSON.parse(params["availability "])
+      update.each do |i|
+        availabilities = {}
 
-    update = JSON.parse(params["availability "])
-    update.each do |i|
-      availabilities = {}
+        availabilities["start_time"] = i['start_time'].to_i
+        availabilities["end_time"] = i['end_time'].to_i
+        availabilities["day_of_the_week"] = i['day_of_the_week']
+        availabilities["user_id"] = current_user.id
+        Availability.find_or_create_by(availabilities)
+      end
 
-      availabilities["start_time"] = i['start_time'].to_i
-      availabilities["end_time"] = i['end_time'].to_i
-      availabilities["day_of_the_week"] = i['day_of_the_week']
-      availabilities["user_id"] = current_user.id
-      Availability.create(availabilities)
-    end
-
-    render json: update
+      render json: update
     end
   end
 end

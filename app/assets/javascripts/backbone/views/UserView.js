@@ -127,7 +127,9 @@ Impromp2App.Views.UserEditView = Backbone.View.extend({
       sliderTimesObject.end_time = sliderTimes[1];
       var sliderDay = $(e).parent().attr('class').replace('slider-container ', '');
       sliderTimesObject.day_of_the_week = sliderDay;
-      sliderTimesJSON.push(sliderTimesObject);
+      if(sliderTimesJSON.indexOf(sliderTimesObject) === -1){
+        sliderTimesJSON.push(sliderTimesObject);
+      }
     });
 
     var string = "availability =" + JSON.stringify( sliderTimesJSON );
