@@ -12,4 +12,4 @@
 !/log/.keep
 /tmp
 
-/lib/assets/.api_key
+/lib/tasks/.api_key
