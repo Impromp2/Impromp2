@@ -13,3 +13,5 @@
 /tmp
 
 /lib/tasks/.api_key
+/lib/tasks/.psql_user
+/lib/tasks/.psql_password
