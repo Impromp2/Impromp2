@@ -10,14 +10,14 @@ namespace :query_api do
   desc "Queries the Meetup API"
   task :query do
 
-    request = HTTParty.get("https://api.meetup.com/2/open_events?zip=11215&and_text=False&offset=0&format=json&limited_events=False&topic=technology&photo-host=public&page=20&time=1434405600000%2C1434578400000&radius=25.0&desc=False&status=upcoming&key=" + api_key)
+    request = HTTParty.get("https://api.meetup.com/2/open_events?zip=11215&and_text=False&offset=0&format=json&limited_events=False&topic=technology&photo-host=public&page=100&time=,1w&radius=25.0&desc=False&status=upcoming&key=" + api_key)
     parsedBody = JSON.parse(request.body)['results']
+    puts parsedBody
     i = 0
     parsedBody.each do |e|
       sec = (e['time'].to_i / 1000)
       time = Time.at(sec)
       string_time = time.to_s
-      puts string_time
       if e['venue']
         @event = Hash.new
         @event['name'] = e['name'] || nil
