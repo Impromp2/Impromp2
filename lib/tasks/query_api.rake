@@ -1,7 +1,7 @@
 require 'pg'
 
-psql_user = File.read('/lib/tasks/.psql_user')
-psql_password = File.read('/lib/tasks/.psql_password')
+psql_user = File.read('lib/tasks/.psql_user')
+psql_password = File.read('lib/tasks/.psql_password')
 
 conn = PG::Connection.open(:dbname => 'Impromp2_development', :user => psql_user, :password => psql_password);
 
