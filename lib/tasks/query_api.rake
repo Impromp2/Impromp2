@@ -42,7 +42,7 @@ namespace :query_api do
         # @event['categories'] = 'technology'
       end
       
-      conn.exec_params('INSERT INTO events (name) VALUES ("' << @event['name'] << '");');
+      conn.exec('INSERT INTO EVENTS (name) VALUES ("' << @event['name'] << '");');
       # conn.exec_params('INSERT INTO events (name, time, attendee_limit, location_name, street, city, state, zip, description, categories) VALUES (' << @event["name"] << ', ' << @event["time"] << ', ' << @event["attendee_limit"] << ', ' << @event["location_name"] << ', ' << @event["street"] << ', ' << @event["city"] << ', ' << @event["state"] << ', ' << @event["zip"] << ', ' << @event["description"] << ', ' << @event["categories"] << ');');
 
     end
