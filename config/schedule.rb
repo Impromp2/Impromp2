@@ -1,7 +1,7 @@
-every 2.minutes do
+every 7.days do
+  command "lib/tasks/.query_api.rake"
   rake "query_api:query"
-  puts "I ran the rake task!"
-end
+]end
 
 # Use this file to easily define all of your cron jobs.
 #
