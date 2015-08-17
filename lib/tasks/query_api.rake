@@ -1,11 +1,11 @@
 require 'pg'
 
-psql_user = File.read('lib/tasks/.psql_user')
-psql_password = File.read('lib/tasks/.psql_password')
-
-conn = PG::Connection.open(:dbname => 'Impromp2_development', :user => psql_user, :password => psql_password);
-
 namespace :query_api do
+  psql_user = File.read('lib/tasks/.psql_user')
+  psql_password = File.read('lib/tasks/.psql_password')
+
+  conn = PG::Connection.open(:dbname => 'Impromp2_development', :user => psql_user, :password => psql_password);
+
   api_key = File.read('lib/tasks/.api_key')
   desc "Queries the Meetup API"
   task :query do
