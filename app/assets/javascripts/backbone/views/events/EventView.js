@@ -16,6 +16,7 @@ Impromp2App.Views.EventView = Backbone.View.extend({
   },
   
   render: function(){
+    console.log(this.events[0].attributes)
     // this.$el.empty();
 
     var day = moment(this.day).format('dddd');

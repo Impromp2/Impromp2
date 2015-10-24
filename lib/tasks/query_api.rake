@@ -6,7 +6,8 @@ namespace :query_api do
 
   conn = PG::Connection.open(:dbname => 'Impromp2_development', :user => psql_user, :password => psql_password);
 
-  api_key = File.read('lib/tasks/.api_key')
+  # api_key = File.read('lib/tasks/.api_key')
+  api_key = '2c6521653179362257336b5f7d1a2614'
   desc "Queries the Meetup API"
   task :query do
 
@@ -19,7 +20,7 @@ namespace :query_api do
       time = Time.at(sec)
       string_time = time.to_s
       if e['venue']
-        @event = Hash.new
+        @event = Event.new
         @event['name'] = e['name'] || nil
         @event['time'] = string_time || nil
         @event['attendee_limit'] = e['rsvp_limit'] || nil
@@ -30,8 +31,9 @@ namespace :query_api do
         @event['zip'] = e['venue']['zip'].to_i || nil
         @event['description'] = e['description'] || nil
         @event['categories'] = 'technology'
+        @event.save
       else 
-        @event = Hash.new
+        @event = Event.new
         @event['name'] = e['name'] || nil
         @event['time'] = string_time || nil
         @event['attendee_limit'] = e['rsvp_limit'] || nil
@@ -42,6 +44,7 @@ namespace :query_api do
         @event['zip'] =  nil
         @event['description'] = e['description'] || nil
         @event['categories'] = 'technology'
+        @event.save
       end     
 
       conn.prepare(i.to_s, 'INSERT INTO events (name, time, attendee_limit, location_name, street, city, state, zip, description, categories, created_at, updated_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12);');
