@@ -1,3 +1,5 @@
+# APP LIVE
+https://impromp2-meetup.herokuapp.com/
 # Impromptu
 
 Impromptu is all about spontenaity for the users, who have a couple hours and want to find something of interest.
